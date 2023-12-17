@@ -24,51 +24,51 @@ export default Carousel = () => {
         loop={true}
         speed={600}
         parallax={true}
-        // autoplay={{
-        //     delay: 3000,
-        //     disableOnInteraction: false,
-        //   }}
+        autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
         pagination={{
         clickable: true,
         }}
         navigation={true}
         modules={[Parallax, Pagination, Navigation, Autoplay]}
-        className="mySwiper h-[250px] md:h-[300px]"
+        className="mySwiper h-[250px] md:h-[300px] lg:h-[400px]"
     >
         <SwiperSlide>
-            <div className="title mt-5 ml-20 z-10 relative text-3xl w-[250px] h-[100px] flex text-center bg-white/50 text-black md:mt-10" data-swiper-parallax="-300">
+            <div className="title mt-5 ml-20 z-10 relative text-3xl w-[250px] h-[100px] flex text-center bg-white/50 text-black rounded-xl md:mt-10" data-swiper-parallax="-300">
                <p className=' pt-3'>Finance & Accouting</p> 
             </div>
 
-            <img src={natureImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center'/>
+            <img src={natureImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center lg:-top-48 xl:-top-72'/>
         </SwiperSlide>
         <SwiperSlide>
-            <div className="title z-10 relative  mt-28 ml-auto mr-16 text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 text-black md:mt-36" data-swiper-parallax="-300">
+            <div className="title z-10 relative  mt-28 ml-auto mr-16 text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 text-black rounded-xl md:mt-36 lg:mt-60 " data-swiper-parallax="-300">
                <p>HR & Payroll</p> 
             </div>
 
             <img src={workImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center'/>
         </SwiperSlide>
         <SwiperSlide>
-            <div className="title mt-5 ml-20 z-10 relative text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 text-black" data-swiper-parallax="-300">
+            <div className="title mt-5 ml-20 z-10 relative text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 rounded-xl text-black" data-swiper-parallax="-300">
                <p>Taxes</p> 
             </div>
 
             <img src={financeImg} className='absolute z-0 left-0 top-0 h-auto w-auto bg-cover bg-center'/>
         </SwiperSlide>
         <SwiperSlide>
-            <div className="title z-10 relative  mt-28 ml-auto mr-16 text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 text-black md:mt-36" data-swiper-parallax="-300">
+            <div className="title z-10 relative  mt-28 ml-auto mr-16 text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 rounded-xl text-black md:mt-36 lg:mt-60" data-swiper-parallax="-300">
                <p>Insurance</p> 
             </div>
 
-            <img src={stocksImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center'/>
+            <img src={stocksImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center xl:-top-80'/>
         </SwiperSlide>
         <SwiperSlide>
-            <div className="title mt-5 ml-20 z-10 relative text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 text-black" data-swiper-parallax="-300">
+            <div className="title mt-5 ml-20 z-10 relative text-3xl w-[250px] h-[100px] flex items-center justify-center bg-white/50 rounded-xl text-black" data-swiper-parallax="-300">
                <p >Call Center</p> 
             </div>
 
-            <img src={officeImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center'/>
+            <img src={officeImg} className='absolute z-0 left-0 -top-20 h-auto w-auto bg-cover bg-center lg:-top-60 2xl:-top-[550px]'/>
         </SwiperSlide>
     </Swiper>
   </div>
