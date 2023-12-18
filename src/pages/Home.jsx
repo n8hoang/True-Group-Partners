@@ -52,7 +52,7 @@ function Home() {
           </div>
         ))}
         </div>
-        <button className='p-2 mb-4 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-400'>
+        <button className='p-2 mt-6 mb-4 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-400'>
         <Link to='/featured'>See Our Featured Clients List </Link>
         </button>
       </section>
