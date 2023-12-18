@@ -20,15 +20,14 @@ function Header() {
         },
         {
             id: 2,
-            link: '/services',
-            name: 'Services'
-        },
-        {
-            id: 3,
             link: ['/overview', '/employment'],
             name: 'About Us',
             icon: <FaCaretDown className='relative top-1' />
-
+        },
+        {
+            id: 3,
+            link: '/services',
+            name: 'Services'
         },
         {
             id: 4,

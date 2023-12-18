@@ -34,7 +34,7 @@ function Home() {
   return (
     <div className='flex flex-col justify-center items-center text-center bg-slate-500'>
       <Carousel />
-      <section className='mx-20 my-16 '>
+      <section className='mx-20 my-16 text-white'>
         <h1 className='text-xl font-extrabold mb-5' > OUTSOURCED FINANCE AND ACCOUNTING SERVICES</h1>
         <h2 className='text-md font-extrabold mb-5'>Finance - Accounting - Taxes - HR - Payroll - Insurance - Call Center</h2>
         <p className='text-md mb-2'>Focus on growing your business. Gain expertise. Reduce costs.</p>
@@ -42,10 +42,10 @@ function Home() {
       </section>
       <div className='h-1 w-4/5 border-blue-500 border-b-2 mb-7'> </div>
       <section className='mx-20 my-15 '>
-        <h1 className='text-2xl font-extrabold mb-5'> Clients</h1>
+        <h1 className='text-2xl font-extrabold mb-5 text-white'> Clients</h1>
         <div className='lg:flex '>
         {clientList.map(({ link, img }) => (
-          <div className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
+          <div key={link}className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
             <Link to={link} target='_blank' rel="noopener noreferrer">
               <img src={img} />
             </Link>
