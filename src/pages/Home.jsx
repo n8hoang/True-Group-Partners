@@ -52,9 +52,17 @@ function Home() {
           </div>
         ))}
         </div>
-        <button className='p-2 mb-4 bg-blue-500 rounded text-black hover:bg-blue-400'>
+        <button className='p-2 mb-4 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-400'>
         <Link to='/featured'>See Our Featured Clients List </Link>
         </button>
+      </section>
+      <section className='bg-blue-500 mt-10 w-full h-[400px] text-white flex flex-col justify-center items-center md:h-[300px]'>
+          <h1 className='mx-20 mt-10 text-4xl font-thin'> Look No Further. Get Started Today</h1>
+          <button className='border-white border-2 py-3 px-4 my-10 hover:bg-blue-400'>
+            <Link to='/contact'>
+              Contact Us For a Free Consultation
+            </Link>
+          </button>
       </section>
     </div>
   )
