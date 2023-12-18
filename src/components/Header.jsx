@@ -79,7 +79,7 @@ function Header() {
                                     to={link}
                                     onClick={() => setDropDown(!dropDown)}
                                     // Change color to white if navtab is active
-                                    className={(currentPage === link[0] || currentPage === link[1]) && dropDown ? 'px-4 relative pl-8 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex relative left-2 hover:opacity-70'}
+                                    className={(currentPage === link[0] || currentPage === link[1]) ? 'px-4 relative pl-8 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex relative left-2 hover:opacity-70'}
                                 >
                                     {name} {icon}
                                 </Link>
