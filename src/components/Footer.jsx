@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import tgpLogo from '../assets/TGP-logo.png'
+import tgpLogo from '../assets/TGP-logo.webp'
 
 function Footer() {
   return (
