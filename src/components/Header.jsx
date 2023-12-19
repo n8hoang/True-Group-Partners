@@ -1,5 +1,5 @@
 import React from 'react'
-import tgpIcon from '../assets/TGP-logo.png'
+import tgpIcon from '../assets/TGP-logo.webp'
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { FaCaretDown, FaBars, FaTimes } from "react-icons/fa";

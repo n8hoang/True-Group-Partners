@@ -1,10 +1,10 @@
 import React from 'react'
 import Carousel from '../components/Carousel'
 import { Link } from 'react-router-dom'
-import ostealImg from '../assets/osteal-therapeutics.png'
-import novaSignalImg from '../assets/novaSignal.png'
-import batteryBizImg from '../assets/batteryBiz.png'
-import pgtImg from '../assets/pgtlogo.png'
+import ostealImg from '../assets/Osteal-therapeutics.webp'
+import novaSignalImg from '../assets/Nova-Signal-2.webp'
+import batteryBizImg from '../assets/battery-biz.webp'
+import pgtImg from '../assets/pgtlogo.webp'
 
 const clientList = [
   {
@@ -46,9 +46,9 @@ function Home() {
         <div className='lg:flex '>
         {clientList.map(({ link, img }) => (
           <div key={link} className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
-            <Link to={link} target='_blank' rel="noopener noreferrer">
+            <a href={link} target='_blank' rel="noopener noreferrer">
               <img src={img} />
-            </Link>
+            </a>
           </div>
         ))}
         </div>
