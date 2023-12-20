@@ -32,13 +32,13 @@ app.post('/send-message', (req, res) => {
   });
 });
 // Employment Email
-app.post('/send-message', (req, res) => {
+app.post('/send-employment', (req, res) => {
     const { to, subject, text } = req.body;
   
     const mailOptions = {
       from: 'sliqq123@gmail.com', // sender address
-      to: to, // list of receivers
-      subject: subject, // Subject line
+      to: 'natehoang911@gmail.com', // list of receivers
+      subject: 'TGP Website - Employment Form', // Subject line
       text: text, // plain text body
     };
   
