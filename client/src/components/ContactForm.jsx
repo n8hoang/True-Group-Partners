@@ -1,5 +1,6 @@
-import React from 'react'
 import { useState } from 'react';
+import axios from 'axios';
+
 function ContactForm() {
     const [formData, setFormData] = useState({
         name: '',
@@ -26,7 +27,7 @@ function ContactForm() {
         }
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
     
         // Validate form inputs
@@ -37,6 +38,13 @@ function ContactForm() {
             ...(!formData.message && { message: 'Message is required.' }),
           });
           return;
+        }
+
+        try {
+          const response = await axios.post('http://localhost:3001/send-message', formData);
+          console.log('Email sent successfully:', response.data);
+        } catch (error) {
+          console.error('Error sending email:', error);
         }
     
         console.log(formData);
