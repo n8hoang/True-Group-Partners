@@ -3,6 +3,8 @@ const app = express();
 const cors = require('cors');
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
+require('dotenv').config();
+
 
 app.use(express.json()); // For parsing application/json
 app.use(cors()); // Cross Origin Resource Sharing for nodemailer
@@ -17,8 +19,8 @@ app.post('/send-message', (req, res) => {
   const { name, email, message } = req.body;
 
   const mailOptions = {
-    from: 'sliqq123@gmail.com', // sender address
-    to: 'natehoang911@gmail.com', // list of receivers
+    from: process.env.EMAIL, // sender address
+    to: process.env.SEND_TO, // list of receivers
     subject: 'TGP Website - Contact Form ', // Subject line
     text: `From: ${name}\nEmail: ${email}\nMessage: ${message} `, // plain text body
   };
