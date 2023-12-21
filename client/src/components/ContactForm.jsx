@@ -53,8 +53,6 @@ function ContactForm() {
       console.error('Error sending email:', error);
       setErrorMessage('Failed to send email. Please try again.');
     }
-
-    console.log(formData);
     // Reset form
     setFormData({
       name: '',
@@ -108,8 +106,8 @@ function ContactForm() {
         </div>
         {/* Email success/error message */}
         <div className="flex justify-center">
-          {successMessage && <p className="text-green-500">{successMessage}</p>}
-          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+          {successMessage && <p className="text-green-500 pb-4">{successMessage}</p>}
+          {errorMessage && <p className="text-red-500 pb-4">{errorMessage}</p>}
         </div>
         <div className="flex justify-center">
           <button

@@ -1,6 +1,9 @@
-import React, { useState , useRef} from 'react';
+import React, { useState, useRef } from 'react';
+import axios from 'axios';
 
 function EmploymentForm() {
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -19,7 +22,6 @@ function EmploymentForm() {
             ...prevFormData,
             [name]: value,
         }));
-
         // Clear the error message for a particular field when it is being edited
         if (formErrors[name]) {
             setFormErrors((prevErrors) => ({
@@ -30,12 +32,19 @@ function EmploymentForm() {
 
 
     };
+    const handleFileChange = (e) => {
+        setFormData(prevFormData => ({
+          ...prevFormData,
+          file: e.target.files[0] // Assuming you're uploading one file
+        }));
+        console.log(formData.file)
+    }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validate form inputs
-        if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.position || !formData.resume) {
+        if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.position || !formData.file) {
             setFormErrors({
                 ...(!formData.firstName && { name: 'First Name is required.' }),
                 ...(!formData.lastName && { name: 'Last Name is required.' }),
@@ -45,6 +54,26 @@ function EmploymentForm() {
                 ...(!formData.resume && { name: 'Resume is required.' }),
             });
             return;
+        }
+        const data = new FormData();
+        data.append('firstName', formData.firstName);
+        data.append('lastName', formData.lastName);
+        data.append('email', formData.email);
+        data.append('phone', formData.phone);
+        data.append('position', formData.position);
+        data.append('file', formData.file)
+
+        try {
+            const response = await axios.post('http://localhost:3001/send-employment', data, 
+            { headers: {
+                'Content-Type': 'multipart/form-data'
+                }
+            });
+            console.log('Email sent successfully:', response.data);
+            setSuccessMessage('Email sent successfully.');
+        } catch (error) {
+            console.error('Error sending email:', error);
+            setErrorMessage('Failed to send email. Please try again.');
         }
 
         console.log(formData);
@@ -134,13 +163,17 @@ function EmploymentForm() {
                         <input
                             id="file"
                             name="file"
-                            type='file'
-                            value={formData.file}
-                            onChange={handleChange}
+                            type="file"
+                            multiple={false}
+                            onChange={handleFileChange}
                             required
                             className=" text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
                         />
                         {formErrors.file && <p className="text-red-500 text-xs mt-1">{formErrors.file}</p>}
+                    </div>
+                    <div className="flex justify-center">
+                        {successMessage && <p className="text-green-500 pb-4">{successMessage}</p>}
+                        {errorMessage && <p className="text-red-500 pb-4">{errorMessage}</p>}
                     </div>
                     <div className="flex justify-center">
                         <button

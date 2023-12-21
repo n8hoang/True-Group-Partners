@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 
 app.use(express.json()); // For parsing application/json
 app.use(cors()); // Cross Origin Resource Sharing for nodemailer
@@ -32,14 +34,19 @@ app.post('/send-message', (req, res) => {
   });
 });
 // Employment Email
-app.post('/send-employment', (req, res) => {
-    const { to, subject, text } = req.body;
-  
+app.post('/send-employment', upload.single('file'), (req, res) => {
+    const { firstName, lastName, email, phone, position, file } = req.body;
     const mailOptions = {
       from: 'sliqq123@gmail.com', // sender address
       to: 'natehoang911@gmail.com', // list of receivers
       subject: 'TGP Website - Employment Form', // Subject line
-      text: text, // plain text body
+      text: `From: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nPosition Desired: ${position}`, // plain text body
+      attachments: [
+        {
+            filename: req.file.originalname,
+            path: req.file.path
+        }
+      ]
     };
   
     transporter.sendMail(mailOptions, function (error, info) {
