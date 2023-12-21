@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from '../components/Carousel'
 import { Link } from 'react-router-dom'
-import ostealImg from '../assets/Osteal-therapeutics.webp'
+import ostealImg from '../assets/Osteal-Therapeutics.webp'
 import novaSignalImg from '../assets/Nova-Signal-2.webp'
 import batteryBizImg from '../assets/battery-biz.webp'
 import pgtImg from '../assets/pgtlogo.webp'
