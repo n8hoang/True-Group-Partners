@@ -14,7 +14,7 @@ function Footer() {
             <a href="mailto:info@truegrouppartners.com" className="hover:text-blue-300">info@truegrouppartners.com</a>
           </address>
         </div>
-        <img src={tgpLogo} className="h-auto w-48 md:w-72" />
+        <img src={tgpLogo} className="h-auto w-40 md:w-72" />
       </div>
       <div className="p-2 bg-gray-900 flex flex-wrap justify-center gap-3 text-sm">
         <Link to="/" className="hover:underline">Home</Link>

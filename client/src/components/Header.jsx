@@ -43,7 +43,7 @@ function Header() {
     return (
         <div className='flex w-full justify-between items-center bg-gradient-to-r from-slate-600 to-gray-800 py-2 px-2 sticky top-0 z-50'>
             <Link to='/' className='flex-shrink-0 relative z-50'>
-                <img className='pl-2 m-2 w-max h-max' src={tgpIcon} />
+                <img className='pl-2 m-2 w-3/5 md:w-max md:h-max' src={tgpIcon} />
             </Link>
             {/* Default NavBar */}
             <ul className='hidden lg:flex '>
@@ -64,7 +64,7 @@ function Header() {
                 ))}
             </ul>
             {/* Mobile NavBar */}
-            <div onClick={() => setNav(!nav)} className=' cursor-pointer pr-4 z-50 text-white lg:hidden'>
+            <div onClick={() => setNav(!nav)} className=' cursor-pointer pr-6 pt-2 z-50 text-white lg:hidden'>
 
                 {nav ? <FaTimes className='hover:text-gray-400' size={30} /> : <FaBars className='hover:text-gray-400' size={30} />}
             </div>
