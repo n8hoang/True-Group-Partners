@@ -1,6 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Parallax, Pagination, Navigation , Autoplay} from 'swiper/modules';
+import { Pagination, Navigation , Autoplay} from 'swiper/modules';
 import natureImg from '../assets/nature.webp'
 import workImg from '../assets/work.webp'
 import financeImg from '../assets/finance.webp'
@@ -22,8 +22,7 @@ export default Carousel = () => {
         '--swiper-pagination-color': '#6495ED',
         }}
         loop={true}
-        speed={600}
-        parallax={true}
+        speed={1400}
         autoplay={{
             delay: 3000,
             disableOnInteraction: false,
@@ -32,7 +31,7 @@ export default Carousel = () => {
         clickable: true,
         }}
         navigation={true}
-        modules={[Parallax, Pagination, Navigation, Autoplay]}
+        modules={[ Pagination, Navigation, Autoplay]}
         className="mySwiper h-[250px] md:h-[300px] lg:h-[400px]"
     >
         <SwiperSlide>
