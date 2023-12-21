@@ -23,7 +23,6 @@ export default Carousel = () => {
         }}
         loop={true}
         speed={1400}
-        parallax={true}
         autoplay={{
             delay: 3000,
             disableOnInteraction: false,
@@ -32,7 +31,7 @@ export default Carousel = () => {
         clickable: true,
         }}
         navigation={true}
-        modules={[ Parallax, Pagination, Navigation, Autoplay]}
+        modules={[ Pagination, Navigation, Autoplay]}
         className="mySwiper h-[250px] md:h-[300px] lg:h-[400px]"
     >
         <SwiperSlide>
