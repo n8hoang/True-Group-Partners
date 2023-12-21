@@ -75,7 +75,7 @@ function EmploymentForm() {
         data.append('file', formData.file)
 
         try {
-            const response = await axios.post('http://localhost:3001/send-employment', data,
+            const response = await axios.post('/send-employment', data,
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data'
