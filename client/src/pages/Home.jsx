@@ -32,7 +32,7 @@ const clientList = [
 
 function Home() {
   return (
-    <div className='flex flex-col justify-center items-center text-center bg-slate-500'>
+    <div className='flex flex-col justify-center items-center text-center bg-slate-500 overflow-x-hidden'>
       <Carousel />
       <section className='mx-20 my-16 text-white'>
         <h1 className='text-xl font-extrabold mb-5' > OUTSOURCED FINANCE AND ACCOUNTING SERVICES</h1>

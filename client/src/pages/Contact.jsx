@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm'
 
 function Contact() {
   return (
-    <section className='flex flex-col items-center p-8 bg-slate-500 text-white h-full'>
+    <section className='flex flex-col items-center p-8 bg-slate-500 text-white h-full overflow-x-hidden'>
       <div className='w-full pt-20'>
         <address className="text-lg md:text-3xl font-semibold text-white mb-8 text-center">
           3680 Wilshire Blvd, Suite P04-1093<br />

@@ -3,7 +3,7 @@ import workImg from '../assets/work.webp'
 
 function Overview() {
   return (
-    <div className="bg-slate-500 text-white ">
+    <div className="bg-slate-500 text-white overflow-x-hidden">
       <div className="relative h-[400px] w-screen overflow-hidden">
         <img src={workImg} className='absolute z-0 left-0 top-0 w-full h-full object-cover' />
       </div>

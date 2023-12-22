@@ -491,7 +491,7 @@ function Featured() {
 
   ]
   return (
-    <div className="bg-slate-500 p-8 flex flex-col">
+    <div className="bg-slate-500 p-8 flex flex-col overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold text-center mb-8 text-blue-500">Featured Clients</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 md:w-[500px] lg:grid-cols-3 lg:w-[700px]">
