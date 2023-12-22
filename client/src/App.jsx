@@ -6,12 +6,12 @@ import ScrollToTop from './helpers/ScrollToTop'
 function App() {
 
   return (
-    <>
+    <div className='overflow-x-hidden'>
     <Header/>
     <ScrollToTop/>
     <Outlet/>
     <Footer/>
-    </>
+    </div>
   )
 }
 
