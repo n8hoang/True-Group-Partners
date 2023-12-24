@@ -69,7 +69,7 @@ function Header() {
                 {nav ? <FaTimes className='hover:text-gray-400' size={30} /> : <FaBars className='hover:text-gray-400' size={30} />}
             </div>
             {nav && (
-                <ul className=' z-40 flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-slate-500 to-gray-800 text-gray-400'>
+                <ul className=' z-40 flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-slate-500 to-gray-800 text-gray-400 pt-8 md:pt-0'>
                     {links.map(({ id, link, name, icon }) => (
                         name === 'About Us' ?
                         // About Us Dropdown Menu
