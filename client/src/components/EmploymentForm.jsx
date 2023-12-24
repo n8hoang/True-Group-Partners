@@ -104,7 +104,7 @@ function EmploymentForm() {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center  w-full">
+            <div className="flex flex-col items-center justify-center overflow-y-hidden w-full">
                 <form onSubmit={handleSubmit} className=" p-8 w-4/5">
                     <div className='flex gap-2 w-full justify-center'>
                         <div className="mb-6 w-1/2 ">
