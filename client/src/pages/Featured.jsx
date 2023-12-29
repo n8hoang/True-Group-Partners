@@ -58,7 +58,6 @@ import PDFShareFormsLogo from '../assets/PDF-Share-Forms-Logo.webp';
 import pgtlogo from '../assets/pgtlogo.webp';
 import presidio from '../assets/presidio.webp';
 import prestozen from '../assets/prestozen.webp';
-import RallisDaw from '../assets/Rallis-Daw.webp';
 import rebus from '../assets/Rebus.webp';
 import redcarpethomecinema from '../assets/red-carpet-home-cinema-1.webp';
 import ripl from '../assets/ripl.webp';
@@ -81,7 +80,20 @@ import VibrationLogo from '../assets/Vibedration-Logo.webp';
 import ViewSayLogo from '../assets/ViewSay-Logo.webp';
 import wallamedia1 from '../assets/wallamedia1.webp';
 import weconnect3 from '../assets/weconnect-3.webp';
-
+import maxwellBio from '../assets/maxwell.webp'
+import operaBio from '../assets/OperaBio_Logo_Final.webp'
+import neuraSignal from '../assets/NeuraSignal.webp'
+import vantisVascular from '../assets/VantisVascular.webp'
+import extricoHealth from '../assets/Extrico-Health.webp'
+import rallisDaw from '../assets/Rallis-Daw.webp'
+import patchwerks from '../assets/Patchwerks.webp'
+import zkrortho from '../assets/ZKROrtho.webp'
+import mintPass from '../assets/MintPass.webp'
+import valliantIntegrations from '../assets/ValliantIntegrations.webp'
+import dreamVentures from '../assets/DreamVentures.webp'
+import littleBearStudios from '../assets/LittleBearStudios.webp'
+import hangar7Aviations from '../assets/Hangar7Aviations.webp'
+import pontusCapital from '../assets/PontusCapital.webp'
 
 
 
@@ -111,7 +123,7 @@ function Featured() {
     },
     {
       name: 'Bibawo Medical',
-      link: '',
+      link: 'https://hydrozid.eu/',
       img: bibawoImg
     },
     {
@@ -123,6 +135,10 @@ function Featured() {
       name: 'Bitvore',
       link: 'https://bitvore.com/',
       img: bitvoreImg
+    },
+    {
+      name: 'BLK Lab',
+      link: '',
     },
     {
       name: 'BrightUro',
@@ -146,7 +162,7 @@ function Featured() {
     },
     {
       name: 'Chalk Board',
-      link: 'https://apps.apple.com/us/app/chalkboard-fantasy-sports/id1489084813',
+      link: 'https://www.chalkboard.io/company/',
       img: chalkboardImg
     },
     {
@@ -160,9 +176,17 @@ function Featured() {
       img: cloudwearImg
     },
     {
+      name: 'Crescendo Research',
+      link: '',
+    },
+    {
       name: 'CrossLiner',
       link: '',
       img: crosslinerImg
+    },
+    {
+      name: 'Currentii Advisors',
+      link: '',
     },
     {
       name: 'Cylynt',
@@ -175,6 +199,11 @@ function Featured() {
       img: demottImg
     },
     {
+      name: 'Dream Ventures',
+      link: 'https://www.dreamventures.com/',
+      img: dreamVentures
+    },
+    {
       name: 'Estars',
       link: 'https://www.estarsstudios.com/',
       img: estarsImg
@@ -183,6 +212,11 @@ function Featured() {
       name: 'Evconnect',
       link: 'https://www.evconnect.com/',
       img: evconnectImg
+    },
+    {
+      name: 'Extrico Health',
+      link: 'https://www.extricohealth.com/',
+      img: extricoHealth
     },
     {
       name: 'Fable',
@@ -225,9 +259,18 @@ function Featured() {
       img: goldKidneyImg
     },
     {
+      name: 'Go Leisure',
+      link: '',
+    },
+    {
       name: 'Gumiyo',
       link: 'https://gumiyo.com/',
       img: gumiyoImg
+    },
+    {
+      name: 'Hangar 7 Aviation',
+      link: 'https://www.flyhangar7.com/',
+      img: hangar7Aviations
     },
     {
       name: 'Helix',
@@ -290,6 +333,11 @@ function Featured() {
       img: liceClinicsImg
     },
     {
+      name: 'Little Bear Studios',
+      link: 'https://www.littlebearcreates.com/',
+      img: littleBearStudios
+    },
+    {
       name: 'Lesisure Link',
       link: '',
       img: leisureLinkImg
@@ -300,14 +348,23 @@ function Featured() {
       img: leptonImg
     },
     {
+      name: 'Lunchtime',
+      link: '',
+    },
+    {
       name: 'M4D LLC',
       link: 'https://m4dllc.com/',
       img: m4dImg
     },
     {
-      name: 'Muse',
-      link: '',
-      img: museImg
+      name: 'Maxwell Biomedical',
+      link: 'https://www.maxwellbiomedical.com/',
+      img: maxwellBio
+    },
+    {
+      name: 'Mint Pass',
+      link: 'https://themintpass.io/',
+      img: mintPass
     },
     {
       name: 'MobileCause',
@@ -318,6 +375,11 @@ function Featured() {
       name: 'Mulholland Tennis Club',
       link: 'https://www.mulhollandtennisclub.com/',
       img: mulhollandTennisImg
+    },
+    {
+      name: 'Muse',
+      link: '',
+      img: museImg
     },
     {
       name: 'Music Styling',
@@ -340,6 +402,11 @@ function Featured() {
       img: Neurolutions
     },
     {
+      name: 'NeuraSignal',
+      link: 'https://www.novasignal.com/',
+      img: neuraSignal
+    },
+    {
       name: 'Nova Signal',
       link: 'https://www.novasignal.com/',
       img: NovaSignal2
@@ -350,9 +417,24 @@ function Featured() {
       img: ocv1
     },
     {
+      name: 'Opera Bioscience',
+      link: 'https://www.operabioscience.com/',
+      img: operaBio
+    },
+    {
       name: 'Outer',
       link: 'https://www.outerlabs.io/',
       img: outer
+    },
+    {
+      name: 'Osteal Therapeutics',
+      link: 'https://www.ostealtx.com/',
+      img: OstealTherapeutics
+    },
+    {
+      name: 'Patchwerks',
+      link: 'https://www.patchwerks.com/',
+      img: patchwerks
     },
     {
       name: 'PDF Share Forms',
@@ -365,6 +447,11 @@ function Featured() {
       img: pgtlogo
     },
     {
+      name: 'Pontus Capital',
+      link: 'https://www.pontuscapital.com/',
+      img: pontusCapital
+    },
+    {
       name: 'Presidio',
       link: 'https://presidio.gov/',
       img: presidio
@@ -374,11 +461,10 @@ function Featured() {
       link: '',
       img: prestozen
     },
-    
     {
       name: 'Rallis-Daw Consulting',
       link: 'https://www.rallis-dawconsulting.com/',
-      img: RallisDaw
+      img: rallisDaw
     },
     {
       name: 'Rebus Biosystems',
@@ -389,6 +475,10 @@ function Featured() {
       name: 'Red Carpet Home Cinema',
       link: '',
       img: redcarpethomecinema
+    },
+    {
+      name: 'Reget West',
+      link: '',
     },
     {
       name: 'Ripl',
@@ -466,6 +556,16 @@ function Featured() {
       img: vacationroost
     },
     {
+      name: 'Vantis Vascular',
+      link: 'https://vantisvascular.com/',
+      img: vantisVascular
+    },
+    {
+      name: 'Valliant Integrations',
+      link: 'https://www.valiantintegrations.com/',
+      img: valliantIntegrations
+    },
+    {
       name: 'Vibedration',
       link: 'https://vibedration.com/',
       img: VibrationLogo
@@ -485,6 +585,12 @@ function Featured() {
       link: 'https://www.weconnecthealth.io/',
       img: weconnect3
     },
+    {
+      name: 'ZKR Ortho',
+      link: 'https://zkrortho.com/',
+      img: zkrortho
+    },
+    
 
 
 
