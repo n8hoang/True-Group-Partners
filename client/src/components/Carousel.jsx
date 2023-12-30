@@ -32,7 +32,7 @@ export default Carousel = () => {
         }}
         navigation={true}
         modules={[ Pagination, Navigation, Autoplay]}
-        className="mySwiper md:h-[300px] lg:h-[400px]"
+        className="mySwiper sm:h-[250px] md:h-[300px] lg:h-[400px]"
     >
         <SwiperSlide>
             <div className="title mt-5 ml-20 z-10 relative text-3xl w-[150px] h-[100px] md:w-[200px] flex text-center bg-white/50 text-black rounded-xl md:mt-10" data-swiper-parallax="-300">
