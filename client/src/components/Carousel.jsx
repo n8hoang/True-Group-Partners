@@ -32,7 +32,7 @@ export default Carousel = () => {
         }}
         navigation={true}
         modules={[ Pagination, Navigation, Autoplay]}
-        className="mySwiper h-[250px] md:h-[300px] lg:h-[400px]"
+        className="mySwiper md:h-[300px] lg:h-[400px]"
     >
         <SwiperSlide>
             <div className="title mt-5 ml-20 z-10 relative text-3xl w-[150px] h-[100px] md:w-[200px] flex text-center bg-white/50 text-black rounded-xl md:mt-10" data-swiper-parallax="-300">
@@ -42,7 +42,7 @@ export default Carousel = () => {
             <img src={natureImg} className='absolute z-0 left-0 -top-10 sm:-top-20 h-auto w-auto bg-cover bg-center lg:-top-48 xl:-top-72'/>
         </SwiperSlide>
         <SwiperSlide>
-            <div className="title z-10 relative  mt-28 ml-auto mr-16 text-3xl w-[150px] h-[100px] md:w-[250px] flex items-center justify-center bg-white/50 text-black rounded-xl md:mt-36 lg:mt-60 " data-swiper-parallax="-300">
+            <div className="title z-10 relative mt-20 ml-auto mr-16 text-3xl w-[150px] h-[100px] md:w-[250px] flex items-center justify-center bg-white/50 text-black rounded-xl md:mt-36 lg:mt-60 " data-swiper-parallax="-300">
                <p>HR & Payroll</p> 
             </div>
 
@@ -56,7 +56,7 @@ export default Carousel = () => {
             <img src={financeImg} className='absolute z-0 left-0 top-0 h-auto w-auto bg-cover bg-center'/>
         </SwiperSlide>
         <SwiperSlide>
-            <div className="title z-10 relative  mt-28 ml-auto mr-16 text-3xl  w-[150px] h-[100px] md:w-[250px] flex items-center justify-center bg-white/50 rounded-xl text-black md:mt-36 lg:mt-60" data-swiper-parallax="-300">
+            <div className="title z-10 relative mt-20 mb-8 ml-auto mr-16 text-3xl  w-[150px] h-[100px] md:w-[250px] flex items-center justify-center bg-white/50 rounded-xl text-black md:mt-36 lg:mt-60" data-swiper-parallax="-300">
                <p>Insurance</p> 
             </div>
 
