@@ -94,6 +94,12 @@ import dreamVentures from '../assets/DreamVentures.webp'
 import littleBearStudios from '../assets/LittleBearStudios.webp'
 import hangar7Aviations from '../assets/Hangar7Aviations.webp'
 import pontusCapital from '../assets/PontusCapital.webp'
+import currentii from '../assets/currentii.webp'
+import lunchtime from '../assets/lunchtime.webp'
+import goleisure from '../assets/goleisure.webp'
+import blklab from '../assets/blklab.webp'
+import crescendo from '../assets/crescendo.webp'
+import regentwest from '../assets/regentwest.webp'
 
 
 
@@ -139,6 +145,7 @@ function Featured() {
     {
       name: 'BLK Lab',
       link: '',
+      img: blklab
     },
     {
       name: 'BrightUro',
@@ -178,6 +185,7 @@ function Featured() {
     {
       name: 'Crescendo Research',
       link: '',
+      img: crescendo
     },
     {
       name: 'CrossLiner',
@@ -187,6 +195,7 @@ function Featured() {
     {
       name: 'Currentii Advisors',
       link: '',
+      img: currentii
     },
     {
       name: 'Cylynt',
@@ -261,6 +270,7 @@ function Featured() {
     {
       name: 'Go Leisure',
       link: '',
+      img: goleisure
     },
     {
       name: 'Gumiyo',
@@ -350,6 +360,7 @@ function Featured() {
     {
       name: 'Lunchtime',
       link: '',
+      img: lunchtime
     },
     {
       name: 'M4D LLC',
@@ -479,6 +490,7 @@ function Featured() {
     {
       name: 'Reget West',
       link: '',
+      img: regentwest
     },
     {
       name: 'Ripl',
