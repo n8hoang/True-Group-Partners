@@ -36,7 +36,7 @@ export default Carousel = () => {
     >
         <SwiperSlide>
             <div className="title mt-5 ml-20 z-10 relative text-3xl w-[150px] h-[100px] md:w-[200px] flex text-center bg-white/50 text-black rounded-xl md:mt-10" data-swiper-parallax="-300">
-               <p className=' pt-3'>Finance & Accouting</p> 
+               <p className=' pt-3'>Finance & Accounting</p> 
             </div>
 
             <img src={natureImg} className='absolute z-0 left-0 -top-10 sm:-top-20 h-auto w-auto bg-cover bg-center lg:-top-48 xl:-top-72'/>
