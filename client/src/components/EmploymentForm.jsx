@@ -173,7 +173,7 @@ function EmploymentForm() {
                         />
                         {formErrors.position && <p className="text-red-500 text-xs mt-1">{formErrors.position}</p>}
                     </div>
-                    <div className="mb-6">
+                    <div className="mb-6 w-full overflow-x-hidden">
                         <label htmlFor="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Resume</label>
                         <input
                             id="file_input"
