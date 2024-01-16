@@ -182,7 +182,7 @@ function EmploymentForm() {
                             multiple={false}
                             onChange={handleFileChange}
                             required
-                            className="block w-full text-sm text-gray-900 rounded-lg cursor-pointer bg-slate-400 focus:outline-blue-500 focus:outline "
+                            className="block w-full text-sm capitalize text-gray-900 rounded-lg cursor-pointer bg-slate-400 focus:outline-blue-500 focus:outline "
                         />
                         {formErrors.file && <p className="text-red-500 text-xs mt-1">{formErrors.file}</p>}
                     </div>
