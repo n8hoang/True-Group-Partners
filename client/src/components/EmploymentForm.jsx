@@ -152,7 +152,7 @@ function EmploymentForm() {
                         <input
                             id="phone"
                             name="phone"
-                            type='phone'
+                            type='tel'
                             value={formData.phone}
                             onChange={handleChange}
                             required
@@ -165,6 +165,7 @@ function EmploymentForm() {
                         <input
                             id="position"
                             name="position"
+                            type='text'
                             value={formData.position}
                             onChange={handleChange}
                             required
@@ -172,16 +173,16 @@ function EmploymentForm() {
                         />
                         {formErrors.position && <p className="text-red-500 text-xs mt-1">{formErrors.position}</p>}
                     </div>
-                    <div className="mb-6 ">
-                        <label htmlFor="file" className="block mb-2 text-sm font-medium text-gray-900 ">Resume</label>
+                    <div className="mb-6">
+                        <label htmlFor="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Resume</label>
                         <input
-                            id="file"
+                            id="file_input"
                             name="file"
-                            type="file"
+                            type='file'
                             multiple={false}
                             onChange={handleFileChange}
                             required
-                            className="text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full "
+                            className="block w-full text-sm text-gray-900 rounded-lg cursor-pointer bg-slate-400 focus:outline-blue-500 focus:outline "
                         />
                         {formErrors.file && <p className="text-red-500 text-xs mt-1">{formErrors.file}</p>}
                     </div>
