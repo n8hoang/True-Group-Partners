@@ -104,10 +104,10 @@ function EmploymentForm() {
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center overflow-y-hidden w-full">
-                <form onSubmit={handleSubmit} className=" p-8 w-4/5">
+            <div className="flex flex-col items-center justify-center mb-6 w-full ">
+                <form onSubmit={handleSubmit} className=" px-8 sm:w-4/5">
                     <div className='flex gap-2 w-full justify-center'>
-                        <div className="mb-6 w-1/2 ">
+                        <div className=" mb-6 w-1/2 ">
                             <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-gray-900">First Name</label>
                             <input
                                 type="text"
@@ -172,8 +172,8 @@ function EmploymentForm() {
                         />
                         {formErrors.position && <p className="text-red-500 text-xs mt-1">{formErrors.position}</p>}
                     </div>
-                    <div className="mb-6">
-                        <label htmlFor="file" className="block mb-2 text-sm font-medium text-gray-900">Resume</label>
+                    <div className="mb-6 ">
+                        <label htmlFor="file" className="block mb-2 text-sm font-medium text-gray-900 ">Resume</label>
                         <input
                             id="file"
                             name="file"
@@ -181,7 +181,7 @@ function EmploymentForm() {
                             multiple={false}
                             onChange={handleFileChange}
                             required
-                            className=" text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
+                            className="text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full "
                         />
                         {formErrors.file && <p className="text-red-500 text-xs mt-1">{formErrors.file}</p>}
                     </div>

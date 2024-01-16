@@ -42,8 +42,8 @@ function Header() {
     ]
     return (
         <div className='flex w-full justify-between items-center bg-gradient-to-r from-slate-600 to-gray-800 py-2 px-2 sticky top-0 z-50 '>
-            <Link to='/' className='flex-shrink-0 relative z-50'>
-                <img onClick={() => setNav(false)} className='pl-2 m-2 w-3/5 md:w-max md:h-max' src={tgpIcon} />
+            <Link to='/' className='flex m-0 relative z-50'>
+                <img onClick={() => setNav(false)} className='block pl-2 m-2 w-48 md:w-max md:h-max' src={tgpIcon} />
             </Link>
             {/* Default NavBar */}
             <ul className='hidden lg:flex '>
