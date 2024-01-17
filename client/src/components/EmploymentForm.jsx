@@ -173,16 +173,27 @@ function EmploymentForm() {
                         />
                         {formErrors.position && <p className="text-red-500 text-xs mt-1">{formErrors.position}</p>}
                     </div>
-                    <div className="mb-6 w-full overflow-x-hidden">
-                        <label htmlFor="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Resume</label>
+                    <div className="mb-6 w-full ">
+                    <label htmlFor="file_input" className="block mb-2 text-sm font-medium text-gray-900">Resume</label>
+                        <div className="flex items-center justify-center bg-slate-400 rounded-lg focus-within:ring-2 focus-within:ring-blue-500 w-full">
+                            <label
+                                tabIndex={0}
+                                htmlFor="file_input"
+                                className="block text-sm text-white bg-blue-600 py-3 px-4 rounded-l-lg cursor-pointer hover:opacity-80 overflow-hidden focus:outline-none"
+                            >
+                                Choose File
+                            </label>
+                            <span id="file-chosen" className="p-2.5 text-gray-900 text-sm bg-slate-400 flex-1 justify-end">No File Chosen</span>
+                        </div>
                         <input
                             id="file_input"
                             name="file"
-                            type='file'
+                            type="file"
                             multiple={false}
                             onChange={handleFileChange}
                             required
-                            className="block w-full text-sm capitalize text-gray-900 rounded-lg cursor-pointer bg-slate-400 focus:outline-blue-500 focus:outline "
+                            className="hidden"
+                            tabIndex="0"
                         />
                         {formErrors.file && <p className="text-red-500 text-xs mt-1">{formErrors.file}</p>}
                     </div>
@@ -193,7 +204,7 @@ function EmploymentForm() {
                     <div className="flex justify-center">
                         <button
                             type="submit"
-                            className="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                            className="text-white bg-blue-600 hover:opacity-80 focus:outline-blue-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                         >
                             {isLoading ? loadingIcon : 'Submit'}
                         </button>
