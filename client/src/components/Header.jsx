@@ -2,15 +2,13 @@ import React from 'react'
 import tgpIcon from '../assets/TGP-logo.webp'
 import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
-import { FaCaretDown, FaBars, FaTimes } from "react-icons/fa";
-import DropdownMenu from './DropdownMenu';
+import { FaBars, FaTimes } from "react-icons/fa";
 
 
 
 function Header() {
     const currentPage = useLocation().pathname
     const [nav, setNav] = useState(false)
-    const [dropDown, setDropDown] = useState(false)
 
     const links = [
         {
@@ -20,22 +18,26 @@ function Header() {
         },
         {
             id: 2,
-            link: ['/overview', '/employment'],
+            link: '/overview',
             name: 'About Us',
-            icon: <FaCaretDown className='relative top-1' />
         },
         {
             id: 3,
+            link: '/employment',
+            name: 'Employment',
+        },
+        {
+            id: 4,
             link: '/services',
             name: 'Services'
         },
         {
-            id: 4,
+            id: 5,
             link: '/featured',
             name: 'Featured Clients'
         },
         {
-            id: 5,
+            id: 6,
             link: '/contact',
             name: 'Contact Us'
         },
@@ -47,12 +49,7 @@ function Header() {
             </Link>
             {/* Default NavBar */}
             <ul className='hidden lg:flex '>
-                {links.map(({ id, link, name, icon }) => (
-                    name === 'About Us' ? (
-                        <div key={id}>
-                            <DropdownMenu link={link} name={name} icon={icon} currentPage={currentPage} />
-                        </div>
-                    ) : (
+                {links.map(({ id, link, name}) => ((
                         <Link
                             key={id}
                             to={link}
@@ -71,41 +68,6 @@ function Header() {
             {nav && (
                 <ul className=' z-40 flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-slate-500 to-gray-800 text-gray-400 pt-8 md:pt-0'>
                     {links.map(({ id, link, name, icon }) => (
-                        name === 'About Us' ?
-                        // About Us Dropdown Menu
-                            <div className='flex items-center flex-col 'key={id}>
-                                <Link
-                                    key={id}
-                                    to={link}
-                                    onClick={() => setDropDown(!dropDown)}
-                                    // Change color to white if navtab is active
-                                    className={(currentPage === link[0] || currentPage === link[1]) ? 'px-4 relative pl-8 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex relative left-2 hover:opacity-70'}
-                                >
-                                    {name} {icon}
-                                </Link>
-                                {dropDown && (
-                                    <div className='flex-col items-center flex'>
-                                    <Link
-                                        to={link[0]}
-                                        onClick={() => setNav(!nav)}
-                                        // Change color to white if navtab is active
-                                        className={currentPage === link[0] ? 'px-4 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex hover:opacity-70'}
-                                    >
-                                        Overview
-                                    </Link>
-                                    <Link
-                                        to={link[1]}
-                                        onClick={() => setNav(!nav)}
-                                        // Change color to white if navtab is active
-                                        className={currentPage === link[1] ? 'px-4 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex hover:opacity-70'}
-                                    >
-                                        Employment
-                                    </Link>
-                                    </div>
-                                )}
-                            </div>
-                            :
-                            // Any link that is not "About Us"
                             <Link
                                 key={id}
                                 to={link}
@@ -119,8 +81,6 @@ function Header() {
                     ))}
                 </ul>
             )}
-
-
         </div>
     )
 }

@@ -38,10 +38,10 @@ app.post('/send-message', (req, res) => {
 });
 // Employment Email
 app.post('/send-employment', upload.single('file'), (req, res) => {
-  const { firstName, lastName, email, phone, position, file } = req.body;
+  const { firstName, lastName, email, phone, position } = req.body;
   const mailOptions = {
-    from: 'sliqq123@gmail.com', // sender address
-    to: 'natehoang911@gmail.com', // list of receivers
+    from: process.env.EMAIL, // sender address
+    to: process.env.SEND_TO, // list of receivers
     subject: 'TGP Website - Employment Form', // Subject line
     text: `From: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nPosition Desired: ${position}`, // plain text body
     attachments: [
