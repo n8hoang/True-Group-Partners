@@ -26,7 +26,7 @@ function Footer() {
       </div>
       <div className="bg-black text-sm">
         <div className="max-w-6xl mx-auto px-4 py-2 text-center">
-          <p>True Group Partners Copyright © 2023 | All Rights Reserved</p>
+          <p>True Group Partners Copyright © <span id="year">{new Date().getFullYear()}</span> | All Rights Reserved</p>
         </div>
       </div>
     </footer>
