@@ -43,6 +43,7 @@ function Header() {
         },
     ]
     return (
+        <div>
         <div className='flex w-full justify-between items-center bg-gradient-to-r from-slate-600 to-gray-800 py-2 px-2 sticky top-0 z-50 '>
             <Link to='/' className='flex m-0 relative z-50'>
                 <img onClick={() => setNav(false)} className='block pl-2 m-2 w-48 md:w-max md:h-max' src={tgpIcon} />
@@ -61,26 +62,23 @@ function Header() {
                 ))}
             </ul>
             {/* Mobile NavBar */}
-            <div onClick={() => setNav(!nav)} className=' cursor-pointer mr-6 pt-2 z-50 text-white lg:hidden'>
-
+    
+            <div onClick={() => setNav(!nav)} className='cursor-pointer mr-6 pt-2 z-50 text-white lg:hidden'>
                 {nav ? <FaTimes className='hover:text-gray-400' size={30} /> : <FaBars className='hover:text-gray-400' size={30} />}
             </div>
-            {nav && (
-                <ul className=' z-40 flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-slate-500 to-gray-800 text-gray-400 pt-8 md:pt-0'>
+        </div>
+                    <ul className={`transition-all duration-1000 ease-in-out ${nav ? 'h-screen' : 'h-0'} overflow-hidden absolute top-6 left-0 w-full bg-gradient-to-r from-slate-600 to-gray-800 text-gray-400 pt-0 flex flex-col justify-center items-center z-10 `}>
                     {links.map(({ id, link, name, icon }) => (
-                            <Link
-                                key={id}
-                                to={link}
-                                onClick={() => setNav(!nav)}
-                                // Change color to white if navtab is active
-                                className={currentPage === link ? 'px-4 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex hover:opacity-70'}
-                            >
-                                {name} {icon}
-                            </Link>
-
+                        <Link
+                            key={id}
+                            to={link}
+                            onClick={() => setNav(!nav)}
+                            className={currentPage === link ? 'px-4 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : 'px-4 cursor-pointer capitalize py-6 text-4xl flex hover:opacity-70'}
+                        >
+                            {name} {icon}
+                        </Link>
                     ))}
                 </ul>
-            )}
         </div>
     )
 }

@@ -6,7 +6,7 @@ import novaSignalImg from '../assets/Nova-Signal-2.webp'
 import batteryBizImg from '../assets/battery-biz.webp'
 import pgtImg from '../assets/pgtlogo.webp'
 import AOS from 'aos'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const clientList = [
   {
@@ -33,6 +33,26 @@ const clientList = [
 ]
 
 function Home() {
+
+  function useWindowWidth() {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    return width;
+    }
+
+    const width = useWindowWidth();
+
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -55,7 +75,7 @@ function Home() {
         <h1 className='text-2xl font-extrabold mb-5 text-white'> Clients</h1>
         <div className='lg:flex '>
         {clientList.map(({ link, img }, i) => (
-          <div data-aos='fade-right' data-aos-delay={`${(i+1) * 150}`} key={link} className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
+          <div data-aos='fade-right' data-aos-delay={`${width < 1024 ? (i + 1) * 150 : 150}`} key={link} className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
             <a href={link} target='_blank' rel="noopener noreferrer">
               <img src={img} />
             </a>
