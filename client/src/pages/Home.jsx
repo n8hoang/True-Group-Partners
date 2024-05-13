@@ -5,6 +5,8 @@ import ostealImg from '../assets/Osteal-Therapeutics.webp'
 import novaSignalImg from '../assets/Nova-Signal-2.webp'
 import batteryBizImg from '../assets/battery-biz.webp'
 import pgtImg from '../assets/pgtlogo.webp'
+import AOS from 'aos'
+import { useEffect } from 'react'
 
 const clientList = [
   {
@@ -31,9 +33,17 @@ const clientList = [
 ]
 
 function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: 'ease-in-out',
+      once: false,
+    });
+  }, []);
+
   return (
     <div className='flex flex-col justify-center items-center text-center bg-slate-500 overflow-x-hidden'>
-      <Carousel />
+      <Carousel/>
       <section className='mx-20 my-16 text-white'>
         <h1 className='text-xl font-extrabold mb-5' > OUTSOURCED FINANCE AND ACCOUNTING SERVICES</h1>
         <h2 className='text-md font-extrabold mb-5'>Finance - Accounting - Taxes - HR - Payroll - Insurance - Call Center</h2>
@@ -44,21 +54,21 @@ function Home() {
       <section className='mx-20 my-15 '>
         <h1 className='text-2xl font-extrabold mb-5 text-white'> Clients</h1>
         <div className='lg:flex '>
-        {clientList.map(({ link, img }) => (
-          <div key={link} className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
+        {clientList.map(({ link, img }, i) => (
+          <div data-aos='fade-right' data-aos-delay={`${(i+1) * 150}`} key={link} className='border-2 my-6 border-black border-solid rounded-xl overflow-hidden lg:mx-4'>
             <a href={link} target='_blank' rel="noopener noreferrer">
               <img src={img} />
             </a>
           </div>
         ))}
         </div>
-        <button className='p-2 mt-6 mb-4 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-400'>
+        <button data-aos='zoom-in' data-aos-duration='2000' className='p-2 mt-6 mb-4 bg-blue-500 rounded-lg text-white font-bold hover:bg-blue-400'>
         <Link to='/featured'>See Our Featured Clients List </Link>
         </button>
       </section>
       <section className='bg-blue-500 mt-10 w-full h-[400px] text-white flex flex-col justify-center items-center md:h-[300px]'>
-          <h1 className='mx-20 mt-10 text-4xl font-thin'> Look No Further. Get Started Today</h1>
-          <button className='border-white border-2 py-3 px-4 my-10 hover:bg-blue-400'>
+          <h1 data-aos='fade-right' data-aos-duration='2000' className='mx-20 mt-10 text-4xl font-thin'> Look No Further. Get Started Today</h1>
+          <button data-aos='zoom-in' data-aos-duration='2000' className='border-white border-2 py-3 px-4 my-10 hover:bg-blue-400'>
             <Link to='/contact'>
               Contact Us For a Free Consultation
             </Link>

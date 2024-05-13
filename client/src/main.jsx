@@ -10,6 +10,7 @@ import Employment from './pages/Employment.jsx'
 import Contact from './pages/Contact.jsx'
 import Featured from './pages/Featured.jsx'
 import Overview from './pages/Overview.jsx'
+import 'aos/dist/aos.css';
 
 const router = createBrowserRouter([
 {
