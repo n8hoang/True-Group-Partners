@@ -64,7 +64,7 @@ function Home() {
   return (
     <div className='flex flex-col justify-center items-center text-center bg-slate-500 overflow-x-hidden'>
       <Carousel/>
-      <section className='mx-20 my-16 text-white'>
+      <section data-aos='fade-right' className='mx-20 my-16 text-white'>
         <h1 className='text-xl font-extrabold mb-5' > OUTSOURCED FINANCE AND ACCOUNTING SERVICES</h1>
         <h2 className='text-md font-extrabold mb-5'>Finance - Accounting - Taxes - HR - Payroll - Insurance - Call Center</h2>
         <p className='text-md mb-2'>Focus on growing your business. Gain expertise. Reduce costs.</p>
