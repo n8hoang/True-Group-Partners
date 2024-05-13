@@ -65,7 +65,7 @@ function Header() {
             <div onClick={() => setNav(!nav)} className='cursor-pointer mr-6 pt-2 z-50 text-white lg:hidden'>
                 {nav ? <FaTimes className='hover:text-gray-400' size={30} /> : <FaBars className='hover:text-gray-400' size={30} />}
             </div>
-                    <ul className={`transition-all duration-1000 ease-in-out ${nav ? 'h-screen' : 'h-0'} overflow-hidden absolute top-24 left-0 w-full bg-gradient-to-r from-slate-600 to-gray-800 text-gray-400 pt-0 flex flex-col justify-center items-center `} >
+                    <ul className={`transition-all duration-1000 ease-in-out ${nav ? 'h-screen' : 'h-0'} overflow-hidden absolute top-20 md:top-24 left-0 w-full bg-gradient-to-r from-slate-600 to-gray-800 text-gray-400 pt-0 flex flex-col justify-center items-center `} >
                     {links.map(({ id, link, name, icon }) => (
                         <Link
                             key={id}
