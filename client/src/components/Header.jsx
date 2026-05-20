@@ -1,85 +1,102 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import tgpIcon from '../assets/TGP-logo.webp'
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from 'react-icons/fa'
 
-
+const links = [
+  { id: 1, link: '/', name: 'Home' },
+  { id: 2, link: '/overview', name: 'About Us' },
+  { id: 3, link: '/services', name: 'Services' },
+  { id: 4, link: '/featured', name: 'Clients' },
+  { id: 5, link: '/employment', name: 'Careers' },
+  { id: 6, link: '/contact', name: 'Contact' },
+]
 
 function Header() {
-    const currentPage = useLocation().pathname
-    const [nav, setNav] = useState(false)
+  const currentPage = useLocation().pathname
+  const [nav, setNav] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
-    const links = [
-        {
-            id: 1,
-            link: '/',
-            name: 'Home'
-        },
-        {
-            id: 2,
-            link: '/overview',
-            name: 'About Us',
-        },
-        {
-            id: 3,
-            link: '/employment',
-            name: 'Employment',
-        },
-        {
-            id: 4,
-            link: '/services',
-            name: 'Services'
-        },
-        {
-            id: 5,
-            link: '/featured',
-            name: 'Featured Clients'
-        },
-        {
-            id: 6,
-            link: '/contact',
-            name: 'Contact Us'
-        },
-    ]
-    return (
-        <div className='flex w-full justify-between items-center bg-gradient-to-r from-slate-600 to-gray-800 py-2 px-2 sticky top-0 z-50 '>
-            <Link to='/' className='flex m-0 relative z-50'>
-                <img onClick={() => setNav(false)} className='block pl-2 m-2 w-48 md:w-max md:h-max' src={tgpIcon} />
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = nav ? 'hidden' : ''
+  }, [nav])
+
+  return (
+    <>
+      <header
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: scrolled ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.82)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: scrolled ? '1px solid rgba(0,0,0,0.08)' : '1px solid rgba(0,0,0,0.04)',
+          boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none',
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+          <Link to="/" onClick={() => setNav(false)} className="flex items-center">
+            <img src={tgpIcon} alt="True Group Partners" className="h-12 w-auto" />
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {links.map(({ id, link, name }) => (
+              <Link
+                key={id}
+                to={link}
+                className={`nav-link-light ${currentPage === link ? 'active' : ''}`}
+              >
+                {name}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              className="btn-primary ml-4"
+              style={{ padding: '10px 22px', fontSize: '0.85rem' }}
+            >
+              Free Consultation
             </Link>
-            {/* Default NavBar */}
-            <ul className='hidden lg:flex '>
-                {links.map(({ id, link, name}) => ((
-                        <Link
-                            key={id}
-                            to={link}
-                            // Change color to white if navtab is active
-                            className={currentPage === link ? 'z-10 px-4 cursor-pointer capitalize font-medium text-white hover:opacity-60 hover:duration-150' : ' px-4 cursor-pointer capitalize font-medium text-gray-400 hover:opacity-60 hover:duration-150'}
-                        >
-                            {name}
-                        </Link>)
-                ))}
-            </ul>
-            {/* Mobile NavBar */}
-    
-            <div onClick={() => setNav(!nav)} className='cursor-pointer mr-6 pt-2 z-50 text-white lg:hidden'>
-                {nav ? <FaTimes className='hover:text-gray-400' size={30} /> : <FaBars className='hover:text-gray-400' size={30} />}
-            </div>
-                    <ul className={`transition-all duration-1000 ease-in-out ${nav ? 'h-screen' : 'h-0'} overflow-hidden absolute top-20 md:top-24 left-0 w-full bg-gradient-to-r from-slate-600 to-gray-800 text-gray-400 pt-0 flex flex-col justify-center items-center `} >
-                    {links.map(({ id, link, name, icon }) => (
-                        <Link
-                            key={id}
-                            to={link}
-                            onClick={() => setNav(!nav)}
-                            style={{ transform: 'translateY(-96px)' }}
-                            className={currentPage === link ? ' px-4 cursor-pointer capitalize py-6 text-4xl flex text-white hover:opacity-70' : ' px-4 cursor-pointer capitalize py-6 text-4xl flex hover:opacity-70'}
-                        >
-                            {name} {icon}
-                        </Link>
-                    ))}
-                </ul>
+          </nav>
+
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setNav(!nav)}
+            className="lg:hidden z-50 text-gray-700 p-2"
+            aria-label="Toggle menu"
+          >
+            {nav ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </div>
-    )
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${nav ? 'open' : ''}`}>
+        {links.map(({ id, link, name }) => (
+          <Link
+            key={id}
+            to={link}
+            onClick={() => setNav(false)}
+            className="mobile-nav-link"
+          >
+            {name}
+          </Link>
+        ))}
+        <Link
+          to="/contact"
+          onClick={() => setNav(false)}
+          className="btn-primary mt-4"
+        >
+          Free Consultation
+        </Link>
+      </div>
+    </>
+  )
 }
 
 export default Header

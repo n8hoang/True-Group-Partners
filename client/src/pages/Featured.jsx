@@ -609,20 +609,28 @@ function Featured() {
 
   ]
   return (
-    <div className="bg-slate-500 p-8 flex flex-col overflow-x-hidden">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-8 text-blue-500">Featured Clients</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:w-[500px] lg:grid-cols-3 lg:w-[700px]">
-          {/* Map clients logos */}
+    <div style={{ background: "#fff" }} className="overflow-x-hidden">
+      <div className="hero-gradient pt-32 pb-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest mb-4 block" style={{ color: "var(--teal)" }}>Portfolio</span>
+          <h1 className="text-white mb-4" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700 }}>Our Clients</h1>
+          <p className="text-lg" style={{ color: "rgba(255,255,255,0.7)" }}>From seed-stage startups to public companies — medtech, technology, consumer, and beyond.</p>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      
           {featuredClients.map(({name, link, img}) => (
             link === '' ? (
-              <a target='_blank' key={name}  rel="noopener noreferrer">
-              <img src={img} alt={name} className="h-24 w-auto mx-auto my-2 border border-black rounded-xl"></img>
-            </a>
-            ) :
-            <a href={link} target='_blank' key={name}  rel="noopener noreferrer">
-              <img src={img} alt={name} className="h-24 w-auto mx-auto my-2 border border-black rounded-xl"></img>
-            </a>
+              <div key={name} className="service-card border rounded-xl flex items-center justify-center p-4" style={{ borderColor: "#eef0f5", height: "96px" }}>
+                <img src={img} alt={name} className="max-h-14 max-w-full object-contain" />
+              </div>
+            ) : (
+              <a href={link} target="_blank" rel="noopener noreferrer" key={name}
+                className="service-card border rounded-xl flex items-center justify-center p-4" style={{ borderColor: "#eef0f5", height: "96px" }}>
+                <img src={img} alt={name} className="max-h-14 max-w-full object-contain" />
+              </a>
+            )
           ))}
         </div>
       </div>

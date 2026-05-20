@@ -1,32 +1,73 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import tgpLogo from '../assets/TGP-logo.webp'
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 py-10 flex items-center justify-between">
-        <div className="mb-6 md:mb-0">
-          <h2 className="text-2xl font-bold mb-2 text-blue-500">Contact Us</h2>
-          <address className="not-italic">
-            3680 Wilshire Blvd, Suite P04-1093<br />
-            Los Angeles CA 90010<br />
-            <a href="tel:+18188228310" className="hover:text-blue-300">Phone: 818.822.8310</a><br />
-            <a href="mailto:info@truegrouppartners.com" className="hover:text-blue-300">info@truegrouppartners.com</a>
-          </address>
+    <footer style={{ background: '#f8f9fc', borderTop: '1px solid #eef0f5' }} className="text-gray-700">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+        {/* Brand */}
+        <div className="md:col-span-1">
+          <img src={tgpLogo} alt="True Group Partners" className="h-12 w-auto mb-5" />
+          <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>
+            Outsourced finance & accounting for high-growth companies — from startup to IPO.
+          </p>
         </div>
-        <img src={tgpLogo} className="h-auto w-40 md:w-72" />
+
+        {/* Services */}
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>Services</h4>
+          <ul className="space-y-2">
+            {['CFO Advisory', 'Accounting Operations', 'Financial Modeling', 'Tax Services', 'HR & Payroll', 'Audit Support'].map(s => (
+              <li key={s}>
+                <Link to="/services" className="text-sm transition-colors hover:text-teal-600" style={{ color: 'var(--gray-600)' }}>
+                  {s}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>Company</h4>
+          <ul className="space-y-2">
+            {[['About Us', '/overview'], ['Clients', '/featured'], ['Careers', '/employment'], ['Contact', '/contact']].map(([name, path]) => (
+              <li key={name}>
+                <Link to={path} className="text-sm transition-colors" style={{ color: 'var(--gray-600)' }}>
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>Contact</h4>
+          <address className="not-italic text-sm space-y-2" style={{ color: 'var(--gray-600)' }}>
+            <p>3680 Wilshire Blvd<br />Suite P04-1093<br />Los Angeles, CA 90010</p>
+            <p>
+              <a href="tel:+18188228310" className="hover:underline" style={{ color: 'var(--gray-600)' }}>818.822.8310</a>
+            </p>
+            <p>
+              <a href="mailto:info@truegrouppartners.com" className="hover:underline" style={{ color: 'var(--gray-600)' }}>info@truegrouppartners.com</a>
+            </p>
+          </address>
+          <Link to="/contact" className="btn-primary mt-6" style={{ fontSize: '0.82rem', padding: '10px 18px' }}>
+            Book a Call →
+          </Link>
+        </div>
       </div>
-      <div className="p-2 bg-gray-900 flex flex-wrap justify-center gap-3 text-sm">
-        <Link to="/" className="hover:underline">Home</Link>
-        <Link to="/about" className="hover:underline">About Us</Link>
-        <Link to='/employment' className="hover:underline">Employment</Link>
-        <Link to="/services" className="hover:underline">Services</Link>
-        <Link to="/featured" className="hover:underline">Featured Clients</Link>
-        <Link to="/contact" className="hover:underline">Contact Us</Link>
-      </div>
-      <div className="bg-black text-sm">
-        <div className="max-w-6xl mx-auto px-4 py-2 text-center">
-          <p>True Group Partners Copyright © <span id="year">{new Date().getFullYear()}</span> | All Rights Reserved</p>
+
+      {/* Bottom bar */}
+      <div style={{ borderTop: '1px solid #eef0f5', background: '#eef0f5' }}>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
+          <p className="text-xs" style={{ color: 'var(--gray-400)' }}>
+            © {new Date().getFullYear()} True Group Partners. All Rights Reserved.
+          </p>
+          <p className="text-xs" style={{ color: 'var(--gray-400)' }}>
+            Outsourced Finance & Accounting · Los Angeles, CA
+          </p>
         </div>
       </div>
     </footer>

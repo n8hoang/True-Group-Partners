@@ -3,17 +3,68 @@ import ContactForm from '../components/ContactForm'
 
 function Contact() {
   return (
-    <section className='flex flex-col items-center p-8 bg-slate-500 text-white h-full overflow-x-hidden'>
-      <div className='w-full pt-20'>
-        <address className="text-lg md:text-3xl font-semibold text-white mb-8 text-center">
-          3680 Wilshire Blvd, Suite P04-1093<br />
-          Los Angeles CA 90010<br />
-          <a href="tel:+18188228310" className="hover:text-blue-300">Phone: 818.822.8310</a><br />
-          <a href="mailto:info@truegrouppartners.com" className="hover:text-blue-300">info@truegrouppartners.com</a>
-        </address>
-        <ContactForm />
+    <div style={{ background: '#fff' }} className="overflow-x-hidden">
+      {/* Hero */}
+      <div className="hero-gradient pt-32 pb-16">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-xs font-semibold uppercase tracking-widest mb-4 block" style={{ color: 'var(--teal)' }}>Contact</span>
+          <h1 className="text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700 }}>
+            Let's Talk
+          </h1>
+          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.7)' }}>
+            Schedule a free consultation and learn how TGP can become your finance partner.
+          </p>
+        </div>
       </div>
-    </section>
+
+      <section className="py-16">
+        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Contact Info */}
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--navy)' }}>Get In Touch</h2>
+
+            <div className="space-y-6 mb-10">
+              {[
+                { icon: '📍', label: 'Office', value: '3680 Wilshire Blvd, Suite P04-1093\nLos Angeles, CA 90010' },
+                { icon: '📞', label: 'Phone', value: '818.822.8310', href: 'tel:+18188228310' },
+                { icon: '✉️', label: 'Email', value: 'info@truegrouppartners.com', href: 'mailto:info@truegrouppartners.com' },
+              ].map(({ icon, label, value, href }) => (
+                <div key={label} className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: 'var(--teal-pale)' }}>
+                    <span>{icon}</span>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--gray-400)' }}>{label}</p>
+                    {href
+                      ? <a href={href} className="text-sm hover:underline" style={{ color: 'var(--navy)' }}>{value}</a>
+                      : <p className="text-sm whitespace-pre-line" style={{ color: 'var(--navy)' }}>{value}</p>
+                    }
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-6 rounded-xl" style={{ background: 'var(--navy)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <h3 className="text-white font-bold mb-3">Why TGP?</h3>
+              <ul className="space-y-2">
+                {['Free initial consultation', 'Big 4 experienced team', 'Fixed-fee, no surprises', 'Startup to IPO expertise'].map(item => (
+                  <li key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                    <span style={{ color: 'var(--teal)' }}>✓</span> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Form */}
+          <div className="lg:col-span-3 p-8 rounded-2xl border" style={{ borderColor: '#eef0f5' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--navy)' }}>Send Us a Message</h3>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 
