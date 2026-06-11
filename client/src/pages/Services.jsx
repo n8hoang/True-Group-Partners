@@ -1,4 +1,4 @@
-import financeImg from '../assets/finance.webp'
+
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
@@ -121,9 +121,9 @@ function Services() {
   return (
     <div style={{ background: '#fff' }} className="overflow-x-hidden">
       {/* Hero */}
-      <div className="relative h-[400px] overflow-hidden">
-        <img src={financeImg} alt="Finance" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.75)' }} />
+      <div className="relative h-[480px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&auto=format&fit=crop&q=80" alt="Finance" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center center" }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.72)' }} />
         <div className="absolute inset-0 flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20">
           <span className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>
             Services
@@ -131,7 +131,7 @@ function Services() {
           <h1 className="text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700 }}>
             Our Services
           </h1>
-          <p className="text-lg max-w-xl" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <p className="text-lg max-w-xl" style={{ color: 'rgba(255,255,255,0.72)' }}>
             Scaled, fixed-fee services — from bookkeeping to CFO advisory — customized to your stage.
           </p>
         </div>

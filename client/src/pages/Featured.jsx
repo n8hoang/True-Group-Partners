@@ -640,8 +640,10 @@ function Featured() {
   ]
   return (
     <div style={{ background: "#fff" }} className="overflow-x-hidden">
-      <div className="hero-gradient pt-32 pb-16">
-        <div className="max-w-6xl mx-auto px-6">
+      <div className="relative h-[480px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format&fit=crop&q=80" alt="Our Clients" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 60%" }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.72)' }} />
+        <div className="absolute inset-0 flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20">
           <span className="text-xs font-semibold uppercase tracking-widest mb-4 block" style={{ color: "var(--teal)" }}>Portfolio</span>
           <h1 className="text-white mb-4" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700 }}>Our Clients</h1>
           <p className="text-lg" style={{ color: "rgba(255,255,255,0.7)" }}>From seed-stage startups to public companies — medtech, technology, consumer, and beyond.</p>

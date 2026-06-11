@@ -5,13 +5,15 @@ function Contact() {
   return (
     <div style={{ background: '#fff' }} className="overflow-x-hidden">
       {/* Hero */}
-      <div className="hero-gradient pt-32 pb-16">
-        <div className="max-w-4xl mx-auto px-6">
+      <div className="relative h-[480px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&auto=format&fit=crop&q=80" alt="Contact" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center center" }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.72)' }} />
+        <div className="absolute inset-0 flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20">
           <span className="text-xs font-semibold uppercase tracking-widest mb-4 block" style={{ color: 'var(--teal)' }}>Contact</span>
           <h1 className="text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700 }}>
             Let's Talk
           </h1>
-          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.7)' }}>
+          <p className="text-lg" style={{ color: 'rgba(255,255,255,0.72)' }}>
             Schedule a free consultation and learn how TGP can become your finance partner.
           </p>
         </div>
@@ -49,7 +51,7 @@ function Contact() {
               <h3 className="text-white font-bold mb-3">Why TGP?</h3>
               <ul className="space-y-2">
                 {['Free initial consultation', 'Big 4 experienced team', 'Fixed-fee, no surprises', 'Startup to IPO expertise'].map(item => (
-                  <li key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  <li key={item} className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.72)' }}>
                     <span style={{ color: 'var(--teal)' }}>✓</span> {item}
                   </li>
                 ))}

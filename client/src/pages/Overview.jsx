@@ -1,4 +1,4 @@
-import workImg from '../assets/work.webp'
+
 import sarahImg from '../assets/tgpsarah.jpeg'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -90,15 +90,15 @@ function Overview() {
   return (
     <div className="overflow-x-hidden" style={{ background: '#fff' }}>
       {/* Hero */}
-      <div className="relative h-[400px] overflow-hidden">
-        <img src={workImg} alt="About TGP" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.78)' }} />
+      <div className="relative h-[480px] overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&auto=format&fit=crop&q=80" alt="About TGP" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "center 30%" }} />
+        <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.72)' }} />
         <div className="absolute inset-0 flex flex-col justify-center px-6 max-w-7xl mx-auto pt-20">
           <span className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>About Us</span>
           <h1 className="text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 700 }}>
             Who We Are
           </h1>
-          <p className="text-lg max-w-xl" style={{ color: 'rgba(255,255,255,0.75)' }}>
+          <p className="text-lg max-w-xl" style={{ color: 'rgba(255,255,255,0.72)' }}>
             A professional services firm providing outsourced finance and accounting — built for companies that demand excellence.
           </p>
         </div>
