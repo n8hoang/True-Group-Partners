@@ -25,7 +25,7 @@ function Contact() {
 
             <div className="space-y-6 mb-10">
               {[
-                { icon: '📍', label: 'Office', value: '3680 Wilshire Blvd, Suite P04-1093\nLos Angeles, CA 90010' },
+                { icon: '📍', label: 'Office', value: '3680 Wilshire Blvd, Suite 1093\nLos Angeles, CA 90010' },
                 { icon: '📞', label: 'Phone', value: '818.822.8310', href: 'tel:+18188228310' },
                 { icon: '✉️', label: 'Email', value: 'info@truegrouppartners.com', href: 'mailto:info@truegrouppartners.com' },
               ].map(({ icon, label, value, href }) => (

@@ -44,7 +44,7 @@ const services = [
   {
     icon: '🚀',
     title: 'Startup & Growth Support',
-    desc: 'Built for venture-backed companies — we help you build the finance infrastructure to scale from seed to Series C and beyond.',
+    desc: 'Built for venture-backed companies — we help you build the finance infrastructure to scale from seed to IPO and beyond.',
     items: ['409A Coordination', 'ESOP / Equity Admin', 'Audit Preparation', 'Systems Implementation', 'Due Diligence Support'],
   },
   {
@@ -56,8 +56,8 @@ const services = [
 ]
 
 const stats = [
-  { number: '25+', label: 'Years of Experience' },
-  { number: '100+', label: 'Companies Supported' },
+  { number: '30+', label: 'Years of Experience' },
+  { number: '200+', label: 'Companies Supported' },
   { number: '$100M+', label: 'Fundraising Supported' },
   { number: 'Seed → IPO', label: 'Full Company Lifecycle' },
 ]
@@ -205,7 +205,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16" data-reveal>
             <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: 'var(--teal)' }}>What We Do</span>
-            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--navy)' }}>Your Complete Finance Team</h2>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: 'var(--navy)' }}>Your Complete Finance & Accounting Team</h2>
             <p className="text-lg max-w-xl mx-auto" style={{ color: 'var(--gray-600)' }}>
               From day-to-day accounting to strategic CFO leadership — one partner for all your finance needs.
             </p>

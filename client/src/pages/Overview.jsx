@@ -1,4 +1,5 @@
 import workImg from '../assets/work.webp'
+import sarahImg from '../assets/tgpsarah.jpeg'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
@@ -23,26 +24,30 @@ const team = [
   {
     name: 'John Hoang',
     title: 'Managing Partner',
-    bio: 'Nearly three decades of experience across finance, accounting, and operations — including Big 4 public accounting at Arthur Andersen. John has led companies from startup through public markets in technology, digital media, and manufacturing, and has raised tens of millions in equity and debt financing.',
+    bio: 'Over three decades of experience across finance, accounting, and operations — including Big 6 public accounting at Arthur Andersen. John has led companies from startup through public markets in technology, digital media, and manufacturing, and has raised tens of millions in equity and debt financing.',
     tags: ['M&A Advisory', 'Capital Raising', 'CFO Services', 'Strategic Finance'],
+    photo: null,
   },
   {
     name: 'Sarah Boettger, CPA',
     title: 'Partner',
-    bio: 'A former PwC associate with 10+ years providing Controller services, FP&A, and government grants support. Sarah is a Certified Public Accountant with deep experience in financial reporting, compliance, and building finance infrastructure for growing companies.',
+    bio: 'A former PwC associate with 10+ years providing Controllership, CFO services, FP&A, and government grants support. Sarah is a Certified Public Accountant with deep experience in financial reporting, compliance, and building finance infrastructure for growing companies.',
     tags: ['Controller Services', 'FP&A', 'CPA', 'Government Grants'],
+    photo: sarahImg,
   },
   {
     name: 'FP&A Manager',
     title: 'Financial Planning & Analysis',
     bio: 'Anderson MBA with deep expertise in financial modeling, forecasting, and KPI development. Supports clients in building the dashboards and models investors expect.',
     tags: ['Financial Modeling', 'Forecasting', 'MBA', 'KPI Development'],
+    photo: null,
   },
   {
     name: 'HR Leadership',
     title: 'HR & People Operations',
     bio: 'PHR and SHRM-CP certified HR professionals who handle everything from hiring and onboarding to benefits administration and compliance — so you don\'t have to.',
     tags: ['PHR Certified', 'SHRM-CP', 'Benefits', 'Compliance'],
+    photo: null,
   },
 ]
 
@@ -94,7 +99,7 @@ function Overview() {
             Who We Are
           </h1>
           <p className="text-lg max-w-xl" style={{ color: 'rgba(255,255,255,0.75)' }}>
-            A boutique outsourced finance and accounting firm — built for companies that demand excellence.
+            A professional services firm providing outsourced finance and accounting — built for companies that demand excellence.
           </p>
         </div>
       </div>
@@ -108,7 +113,7 @@ function Overview() {
               Your Back Office, Elevated
             </h2>
             <p className="leading-relaxed text-lg mb-5" style={{ color: 'var(--gray-600)' }}>
-              True Group Partners is a boutique professional services firm providing outsourced finance and accounting services.
+              True Group Partners is a professional services firm providing outsourced finance and accounting services.
               We believe you should focus on growing your business while our experienced team takes care of all your back office needs.
             </p>
             <p className="leading-relaxed" style={{ color: 'var(--gray-600)' }}>
@@ -137,12 +142,12 @@ function Overview() {
             <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: 'var(--teal)' }}>Our Team</span>
             <h2 className="text-3xl font-bold" style={{ color: 'var(--navy)' }}>People Buy the Team</h2>
             <p className="mt-3 text-lg max-w-xl mx-auto" style={{ color: 'var(--gray-600)' }}>
-              Our leadership brings Big 4, MBA, and C-suite experience directly to your business.
+              Our leadership brings Big 6, MBA, and C-suite experience directly to your business.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map(({ name, title, bio, tags }, i) => (
+            {team.map(({ name, title, bio, tags, photo }, i) => (
               <div
                 key={name}
                 data-reveal
@@ -150,10 +155,19 @@ function Overview() {
                 className="p-7 rounded-2xl border"
                 style={{ background: '#fff', borderColor: '#eef0f5', borderTop: '3px solid var(--teal)' }}
               >
-                <div className="w-14 h-14 rounded-full flex items-center justify-center text-2xl mb-4"
-                  style={{ background: 'var(--teal-pale)' }}>
-                  👤
-                </div>
+                {photo ? (
+                  <img
+                    src={photo}
+                    alt={name}
+                    className="w-16 h-16 rounded-full object-cover mb-4"
+                    style={{ objectPosition: 'center top' }}
+                  />
+                ) : (
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mb-4"
+                    style={{ background: 'var(--teal-pale)' }}>
+                    👤
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-0.5" style={{ color: 'var(--navy)' }}>{name}</h3>
                 <p className="text-sm font-medium mb-4" style={{ color: 'var(--teal)' }}>{title}</p>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: 'var(--gray-600)' }}>{bio}</p>

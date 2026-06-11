@@ -45,7 +45,7 @@ function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>Contact</h4>
           <address className="not-italic text-sm space-y-2" style={{ color: 'var(--gray-600)' }}>
-            <p>3680 Wilshire Blvd<br />Suite P04-1093<br />Los Angeles, CA 90010</p>
+            <p>3680 Wilshire Blvd<br />Suite 1093<br />Los Angeles, CA 90010</p>
             <p>
               <a href="tel:+18188228310" className="hover:underline" style={{ color: 'var(--gray-600)' }}>818.822.8310</a>
             </p>

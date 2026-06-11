@@ -101,6 +101,23 @@ import blklab from '../assets/blklab.webp'
 import crescendo from '../assets/crescendo.webp'
 import regentwest from '../assets/regentwest.webp'
 
+// New client logos
+import maxwellBioImg from '../assets/Maxwell_bio.webp'
+import leapPhotonicsImg from '../assets/leaphotonics.png'
+import edgeDyneImg from '../assets/EDGEDYNE-04.webp'
+import tahoeEquityImg from '../assets/tahoe_equity.png'
+import uromems from '../assets/logo-uromems-white.svg'
+import dreamVenturesImg from '../assets/dream-ventures.svg'
+import siflyImg from '../assets/sifly.png'
+import curranImg from '../assets/curran-home-dark.svg'
+import finallyQuietImg from '../assets/finally-quiet.png'
+import fanaleImg from '../assets/fanale.avif'
+import usBobImg from '../assets/us-boba-logo.png'
+import kanduImg from '../assets/Kandu-Logo.svg'
+import blueprint52Img from '../assets/b52-blue-logo.svg'
+import pokerGfxImg from '../assets/pokergfx.png'
+import resiadaImg from '../assets/reseida.png'
+
 
 
 
@@ -602,11 +619,24 @@ function Featured() {
       link: 'https://zkrortho.com/',
       img: zkrortho
     },
-    
-
-
-
-
+    { name: 'Maxwell Biomedical', link: '', img: maxwellBioImg, dark: false },
+    { name: 'Leap Photonics', link: '', img: leapPhotonicsImg, dark: true },
+    { name: 'EdgeDyne', link: '', img: edgeDyneImg, dark: false },
+    { name: 'Tahoe Equity', link: '', img: tahoeEquityImg, dark: false },
+    { name: 'Paratroop', link: '', img: null, dark: false },
+    { name: 'Uromems', link: '', img: uromems, dark: true },
+    { name: 'Dream Ventures', link: '', img: dreamVenturesImg, dark: false },
+    { name: 'SiFly', link: '', img: siflyImg, dark: true },
+    { name: 'Curran Online', link: '', img: curranImg, dark: false },
+    { name: 'ITG', link: '', img: null, dark: false },
+    { name: 'Finally Quiet', link: '', img: finallyQuietImg, dark: true },
+    { name: 'Fanale Drinks', link: '', img: fanaleImg, dark: false },
+    { name: 'US Boba', link: '', img: usBobImg, dark: true },
+    { name: 'Integer', link: '', img: null, dark: false },
+    { name: 'Kandu Inc.', link: '', img: kanduImg, dark: false },
+    { name: 'Blueprint 52', link: '', img: blueprint52Img, dark: false },
+    { name: 'PokerGFX', link: '', img: pokerGfxImg, dark: false },
+    { name: 'Resida', link: '', img: resiadaImg, dark: false },
   ]
   return (
     <div style={{ background: "#fff" }} className="overflow-x-hidden">
@@ -620,18 +650,47 @@ function Featured() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       
-          {featuredClients.map(({name, link, img}) => (
-            link === '' ? (
-              <div key={name} className="service-card border rounded-xl flex items-center justify-center p-4" style={{ borderColor: "#eef0f5", height: "96px" }}>
-                <img src={img} alt={name} className="max-h-14 max-w-full object-contain" />
-              </div>
+          {featuredClients.map(({name, link, img, dark}) => {
+            const cardStyle = {
+              borderColor: "#eef0f5",
+              height: "120px",
+              background: '#fff',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              padding: '12px',
+            }
+            const nameStyle = {
+              fontSize: '10px',
+              fontWeight: 600,
+              color: 'var(--gray-400)',
+              textAlign: 'center',
+              lineHeight: 1.3,
+              letterSpacing: '0.02em',
+            }
+            const inner = img === null ? (
+              <>
+                <span style={{ fontSize: '13px', fontWeight: 700, color: 'var(--navy)', textAlign: 'center', lineHeight: 1.3 }}>{name}</span>
+              </>
             ) : (
-              <a href={link} target="_blank" rel="noopener noreferrer" key={name}
-                className="service-card border rounded-xl flex items-center justify-center p-4" style={{ borderColor: "#eef0f5", height: "96px" }}>
-                <img src={img} alt={name} className="max-h-14 max-w-full object-contain" />
-              </a>
+              <>
+                <img src={img} alt={name} style={{ maxHeight: '48px', maxWidth: '100%', objectFit: 'contain', filter: dark ? 'invert(1)' : 'none' }} />
+                <span style={nameStyle}>{name}</span>
+              </>
             )
-          ))}
+            return link ? (
+              <a href={link} target="_blank" rel="noopener noreferrer" key={name}
+                className="service-card border rounded-xl" style={cardStyle}>
+                {inner}
+              </a>
+            ) : (
+              <div key={name} className="service-card border rounded-xl" style={cardStyle}>
+                {inner}
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
