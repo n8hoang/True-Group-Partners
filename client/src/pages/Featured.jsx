@@ -117,6 +117,7 @@ import kanduImg from '../assets/Kandu-Logo.svg'
 import blueprint52Img from '../assets/b52-blue-logo.svg'
 import pokerGfxImg from '../assets/pokergfx.png'
 import resiadaImg from '../assets/reseida.png'
+import itgImg from '../assets/Pilot ITG for pilotit com.avif'
 
 
 
@@ -628,7 +629,7 @@ function Featured() {
     { name: 'Dream Ventures', link: '', img: dreamVenturesImg, dark: false },
     { name: 'SiFly', link: '', img: siflyImg, dark: true },
     { name: 'Curran Online', link: '', img: curranImg, dark: false },
-    { name: 'ITG', link: '', img: null, dark: false },
+    { name: 'ITG', link: '', img: itgImg, dark: false },
     { name: 'Finally Quiet', link: '', img: finallyQuietImg, dark: true },
     { name: 'Fanale Drinks', link: '', img: fanaleImg, dark: false },
     { name: 'US Boba', link: '', img: usBobImg, dark: true },
@@ -638,6 +639,9 @@ function Featured() {
     { name: 'PokerGFX', link: '', img: pokerGfxImg, dark: false },
     { name: 'Resida', link: '', img: resiadaImg, dark: false },
   ]
+  const sortedClients = [...featuredClients].sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+  )
   return (
     <div style={{ background: "#fff" }} className="overflow-x-hidden">
       <div className="relative h-[480px] overflow-hidden">
@@ -652,7 +656,7 @@ function Featured() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
       
-          {featuredClients.map(({name, link, img, dark}) => {
+          {sortedClients.map(({name, link, img, dark}) => {
             const cardStyle = {
               borderColor: "#eef0f5",
               height: "120px",
