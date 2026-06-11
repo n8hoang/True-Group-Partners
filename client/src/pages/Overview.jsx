@@ -1,5 +1,6 @@
 
 import sarahImg from '../assets/tgpsarah.jpeg'
+import johnImg from '../assets/john-pp.jpeg'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
@@ -26,7 +27,7 @@ const team = [
     title: 'Managing Partner',
     bio: 'Over three decades of experience across finance, accounting, and operations — including Big 6 public accounting at Arthur Andersen. John has led companies from startup through public markets in technology, digital media, and manufacturing, and has raised tens of millions in equity and debt financing.',
     tags: ['M&A Advisory', 'Capital Raising', 'CFO Services', 'Strategic Finance'],
-    photo: null,
+    photo: johnImg,
   },
   {
     name: 'Sarah Boettger, CPA',
