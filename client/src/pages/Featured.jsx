@@ -102,10 +102,8 @@ import crescendo from '../assets/crescendo.webp'
 import regentwest from '../assets/regentwest.webp'
 
 // New client logos
-import maxwellBioImg from '../assets/Maxwell_bio.webp'
 import leapPhotonicsImg from '../assets/leaphotonics.png'
 import edgeDyneImg from '../assets/EDGEDYNE-04.webp'
-import tahoeEquityImg from '../assets/tahoe_equity.png'
 import uromems from '../assets/logo-uromems-white.svg'
 import dreamVenturesImg from '../assets/dream-ventures.svg'
 import siflyImg from '../assets/sifly.png'
@@ -620,10 +618,8 @@ function Featured() {
       link: 'https://zkrortho.com/',
       img: zkrortho
     },
-    { name: 'Maxwell Biomedical', link: '', img: maxwellBioImg, dark: false },
     { name: 'Leap Photonics', link: '', img: leapPhotonicsImg, dark: true },
     { name: 'EdgeDyne', link: '', img: edgeDyneImg, dark: false },
-    { name: 'Tahoe Equity', link: '', img: tahoeEquityImg, dark: false },
     { name: 'Paratroop', link: '', img: null, dark: false },
     { name: 'Uromems', link: '', img: uromems, dark: true },
     { name: 'Dream Ventures', link: '', img: dreamVenturesImg, dark: false },

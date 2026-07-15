@@ -39,7 +39,7 @@ const team = [
   {
     name: 'FP&A Manager',
     title: 'Financial Planning & Analysis',
-    bio: 'Anderson MBA with deep expertise in financial modeling, forecasting, and KPI development. Supports clients in building the dashboards and models investors expect.',
+    bio: 'Kellogg MBA with deep expertise in financial modeling, forecasting, and KPI development. Supports clients in building the dashboards and models investors expect.',
     tags: ['Financial Modeling', 'Forecasting', 'MBA', 'KPI Development'],
     photo: null,
   },
