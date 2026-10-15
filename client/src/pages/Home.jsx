@@ -38,8 +38,8 @@ const services = [
   {
     icon: '📒',
     title: 'Accounting Operations',
-    desc: 'Full-stack outsourced accounting — from day-to-day bookkeeping to monthly close, AP/AR, and financial statement preparation.',
-    items: ['Bookkeeping & AP/AR', 'Monthly Close', 'Bank Reconciliations', 'Cash Flow Analysis', 'Financial Statements'],
+    desc: 'Full-stack outsourced accounting — from day-to-day bookkeeping to monthly close, AP/AR, grant accounting, and financial statement preparation.',
+    items: ['Bookkeeping & AP/AR', 'Monthly Close', 'Grant Accounting', 'Bank Reconciliations', 'Financial Statements'],
   },
   {
     icon: '🚀',
@@ -81,12 +81,21 @@ const testimonials = [
 ]
 
 const industries = [
-  { icon: '🧬', label: 'MedTech & BioTech' },
+  { icon: '🧬', label: 'Life Sciences, Biotech & MedTech' },
+  { icon: '🔬', label: 'NIH / SBIR Grant-Funded Companies' },
   { icon: '💡', label: 'Venture-Backed Startups' },
-  { icon: '🏢', label: 'Consumer Brands' },
   { icon: '📱', label: 'SaaS & Technology' },
-  { icon: '🏦', label: 'Financial Services' },
+  { icon: '🏢', label: 'Consumer Brands' },
   { icon: '🏭', label: 'Manufacturing' },
+]
+
+const grantHighlights = [
+  'Grant-specific expense tracking',
+  'Direct & indirect cost allocation',
+  'Payroll & employee time allocation',
+  'Grant budget-to-actual reporting',
+  'Audit & compliance readiness',
+  'Multiple grants and funding sources',
 ]
 
 function useReveal() {
@@ -129,34 +138,38 @@ function Home() {
             <div className="animate-fade-up flex items-center gap-3 mb-6">
               <div className="w-8 h-px" style={{ background: 'var(--teal)' }} />
               <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--teal)' }}>
-                Outsourced Finance & Accounting
+                Outsourced Accounting & CFO Services
               </span>
             </div>
 
             <h1 className="animate-fade-up text-white mb-6 leading-tight"
               style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 700, animationDelay: '0.1s' }}>
-              Finance & Accounting<br />
-              <span style={{ color: 'var(--teal)' }}>for High-Growth Companies</span>
+              Accounting & CFO Services<br />
+              <span style={{ color: 'var(--teal)' }}>for Growing Companies</span>
             </h1>
 
-            <p className="animate-fade-up mb-10 text-lg leading-relaxed"
+            <p className="animate-fade-up mb-4 text-lg leading-relaxed"
               style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '560px', animationDelay: '0.2s' }}>
               We help startups and growing businesses scale with accounting, strategic finance, HR, and CFO leadership —
               from your first bookkeeper to your pre-IPO close.
+            </p>
+            <p className="animate-fade-up mb-10 text-base font-medium leading-relaxed"
+              style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '560px', animationDelay: '0.25s' }}>
+              Specialized expertise in Life Sciences, MedTech & Government-Funded Companies — including NIH and SBIR/STTR grant accounting.
             </p>
 
             <div className="animate-fade-up flex flex-wrap gap-4" style={{ animationDelay: '0.3s' }}>
               <Link to="/contact" className="btn-primary">
                 Book a Free Consultation →
               </Link>
-              <Link to="/services" className="btn-outline">
-                View Services
+              <Link to="/life-sciences" className="btn-outline">
+                Life Sciences & Grant Accounting
               </Link>
             </div>
 
             {/* Trust badges */}
             <div className="animate-fade-up mt-12 flex flex-wrap gap-6" style={{ animationDelay: '0.4s' }}>
-              {['Big 4 Alumni Team', 'Startup → Public Co.', 'Fixed-Fee Pricing'].map(badge => (
+              {['Big 4 Alumni Team', 'NIH / SBIR Grant Accounting', 'Startup → Public Co.', 'Fixed-Fee Pricing'].map(badge => (
                 <div key={badge} className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full flex items-center justify-center"
                     style={{ background: 'rgba(0,180,160,0.2)', border: '1px solid var(--teal)' }}>
@@ -244,6 +257,60 @@ function Home() {
         </div>
       </section>
 
+      {/* ── LIFE SCIENCES & GRANT ACCOUNTING ────────── */}
+      <section className="py-24" style={{ background: 'var(--navy-mid)' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div data-reveal>
+              <span className="text-xs font-semibold uppercase tracking-widest mb-4 block" style={{ color: 'var(--teal)' }}>
+                Specialization
+              </span>
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Life Sciences & Grant Accounting
+              </h2>
+              <p className="text-lg leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                We provide outsourced accounting, grant accounting, controller and CFO support to emerging biotech,
+                medtech and life sciences companies.
+              </p>
+              <p className="leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                From your first NIH or SBIR/STTR award through venture financing and commercial growth, we help build
+                the financial infrastructure needed to manage funding, maintain accurate records and give management
+                and investors better financial visibility.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/life-sciences" className="btn-primary">
+                  Explore Life Sciences →
+                </Link>
+                <Link to="/contact" className="btn-outline">
+                  Grant Accounting Readiness Review
+                </Link>
+              </div>
+            </div>
+            <div data-reveal data-delay="150"
+              className="p-8 rounded-2xl"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-3xl">🔬</span>
+                <div>
+                  <h3 className="text-xl font-bold text-white">NIH, SBIR/STTR & Government Grant Accounting</h3>
+                  <p className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
+                    Receiving a grant creates accounting requirements many early-stage companies aren't prepared to manage.
+                  </p>
+                </div>
+              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {grantHighlights.map(item => (
+                  <li key={item} className="flex items-start gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                    <span style={{ color: 'var(--teal)', fontWeight: 700 }}>✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── INDUSTRIES ──────────────────────────────── */}
       <section className="py-24" style={{ background: 'var(--gray-50)' }}>
         <div className="max-w-7xl mx-auto px-6">
@@ -255,8 +322,8 @@ function Home() {
               </h2>
               <p className="text-lg leading-relaxed mb-8" style={{ color: 'var(--gray-600)' }}>
                 We've built specialized knowledge in the sectors where financial complexity is highest.
-                Whether you're navigating FDA compliance, managing investor expectations, or preparing for an exit —
-                we've done it before.
+                Whether you're managing NIH or SBIR/STTR grant funding, navigating FDA compliance, managing investor
+                expectations, or preparing for an exit — we've done it before.
               </p>
               <Link to="/featured" className="btn-primary">
                 View Our Clients →

@@ -10,6 +10,7 @@ import Employment from './pages/Employment.jsx'
 import Contact from './pages/Contact.jsx'
 import Featured from './pages/Featured.jsx'
 import Overview from './pages/Overview.jsx'
+import LifeSciences from './pages/LifeSciences.jsx'
 import 'aos/dist/aos.css';
 
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   children: [
     {index: true, element: <Home/>},
     {path: '/services', element: <Services/>},
+    {path: '/life-sciences', element: <LifeSciences/>},
     {path: '/overview', element: <Overview/>},
     {path: '/employment', element: <Employment/>},
     {path: '/featured', element: <Featured/>},

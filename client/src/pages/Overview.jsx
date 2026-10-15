@@ -31,10 +31,11 @@ const team = [
   },
   {
     name: 'Sarah Boettger, CPA',
-    title: 'Partner',
-    bio: 'A former PwC associate with 10+ years providing Controllership, CFO services, FP&A, and government grants support. Sarah is a Certified Public Accountant with deep experience in financial reporting, compliance, and building finance infrastructure for growing companies.',
-    tags: ['Controller Services', 'FP&A', 'CPA', 'Government Grants'],
+    title: 'Partner, Life Sciences & Grant Accounting',
+    bio: "A former PwC associate with 10+ years providing Controllership, CFO services, FP&A, and government grants support. Sarah leads TGP's work with life sciences and grant-funded companies, helping management teams establish accounting processes around NIH and SBIR/STTR funding while building the broader financial infrastructure needed as their businesses grow.",
+    tags: ['Grant Accounting', 'Life Sciences', 'Controller Services', 'FP&A', 'CPA'],
     photo: sarahImg,
+    link: '/life-sciences',
   },
   {
     name: 'FP&A Manager',
@@ -148,7 +149,7 @@ function Overview() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map(({ name, title, bio, tags, photo }, i) => (
+            {team.map(({ name, title, bio, tags, photo, link }, i) => (
               <div
                 key={name}
                 data-reveal
@@ -183,6 +184,11 @@ function Overview() {
                     </span>
                   ))}
                 </div>
+                {link && (
+                  <Link to={link} className="inline-block mt-5 text-sm font-semibold" style={{ color: 'var(--teal)' }}>
+                    Life Sciences & Grant Accounting →
+                  </Link>
+                )}
               </div>
             ))}
           </div>

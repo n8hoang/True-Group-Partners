@@ -7,9 +7,10 @@ const links = [
   { id: 1, link: '/', name: 'Home' },
   { id: 2, link: '/overview', name: 'About Us' },
   { id: 3, link: '/services', name: 'Services' },
-  { id: 4, link: '/featured', name: 'Clients' },
-  { id: 5, link: '/employment', name: 'Careers' },
-  { id: 6, link: '/contact', name: 'Contact' },
+  { id: 4, link: '/life-sciences', name: 'Life Sciences' },
+  { id: 5, link: '/featured', name: 'Clients' },
+  { id: 6, link: '/employment', name: 'Careers' },
+  { id: 7, link: '/contact', name: 'Contact' },
 ]
 
 function Header() {

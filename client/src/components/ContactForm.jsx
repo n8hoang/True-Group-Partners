@@ -118,6 +118,8 @@ function ContactForm() {
             <label className="form-label">Service Interested In</label>
             <select id="service" name="service" value={formData.service} onChange={handleChange} className="form-input">
               <option value="">Select a service...</option>
+              <option>Life Sciences & Grant Accounting</option>
+              <option>Grant Accounting Readiness Review</option>
               <option>CFO & Strategic Finance</option>
               <option>Accounting Operations</option>
               <option>Startup & Transaction Support</option>

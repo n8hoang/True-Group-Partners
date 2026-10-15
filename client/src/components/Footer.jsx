@@ -9,7 +9,7 @@ function Footer() {
         <div className="md:col-span-1">
           <img src={tgpLogo} alt="True Group Partners" className="h-12 w-auto mb-5" />
           <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>
-            Outsourced finance & accounting for high-growth companies — from startup to IPO.
+            Outsourced accounting & CFO services for growing companies — with specialized expertise in life sciences, medtech & government-funded companies.
           </p>
         </div>
 
@@ -17,9 +17,17 @@ function Footer() {
         <div>
           <h4 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>Services</h4>
           <ul className="space-y-2">
-            {['CFO Advisory', 'Accounting Operations', 'Financial Modeling', 'Tax Services', 'HR & Payroll', 'Audit Support'].map(s => (
+            {[
+              ['Life Sciences & Grant Accounting', '/life-sciences'],
+              ['CFO Advisory', '/services'],
+              ['Accounting Operations', '/services'],
+              ['Financial Modeling', '/services'],
+              ['Tax Services', '/services'],
+              ['HR & Payroll', '/services'],
+              ['Audit Support', '/services'],
+            ].map(([s, path]) => (
               <li key={s}>
-                <Link to="/services" className="text-sm transition-colors hover:text-teal-600" style={{ color: 'var(--gray-600)' }}>
+                <Link to={path} className="text-sm transition-colors hover:text-teal-600" style={{ color: 'var(--gray-600)' }}>
                   {s}
                 </Link>
               </li>
@@ -66,7 +74,7 @@ function Footer() {
             © {new Date().getFullYear()} True Group Partners. All Rights Reserved.
           </p>
           <p className="text-xs" style={{ color: 'var(--gray-400)' }}>
-            Outsourced Finance & Accounting · Los Angeles, CA
+            Outsourced Accounting & CFO Services · Life Sciences & Grant Accounting · Los Angeles, CA
           </p>
         </div>
       </div>

@@ -21,6 +21,26 @@ function useReveal() {
 
 const serviceSections = [
   {
+    id: 'grants',
+    icon: '🔬',
+    title: 'Life Sciences & Grant Accounting',
+    subtitle: 'NIH, SBIR/STTR & government grant accounting for biotech, medtech and life sciences companies',
+    color: 'var(--teal)',
+    link: '/life-sciences',
+    items: [
+      'Grant-specific expense tracking',
+      'Direct and indirect cost allocation',
+      'Payroll and employee time allocation',
+      'Supporting documentation',
+      'Grant budget-to-actual reporting',
+      'Accounting policies and procedures',
+      'Reconciliations and financial reporting',
+      'Audit and compliance readiness',
+      'Multiple grants and funding sources',
+      "Integrating grant accounting with the company's overall financial reporting",
+    ],
+  },
+  {
     id: 'accounting',
     icon: '📒',
     title: 'Accounting Operations',
@@ -132,7 +152,7 @@ function Services() {
             Our Services
           </h1>
           <p className="text-lg max-w-xl" style={{ color: 'rgba(255,255,255,0.72)' }}>
-            Scaled, fixed-fee services — from bookkeeping to CFO advisory — customized to your stage.
+            Scaled, fixed-fee services — from grant accounting and bookkeeping to CFO advisory — customized to your stage.
           </p>
         </div>
       </div>
@@ -160,7 +180,7 @@ function Services() {
       {/* Service Sections */}
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-6 space-y-16">
-          {serviceSections.map(({ id, icon, title, subtitle, color, items }, i) => (
+          {serviceSections.map(({ id, icon, title, subtitle, color, items, link }, i) => (
             <div
               key={id}
               id={id}
@@ -187,6 +207,13 @@ function Services() {
                     </div>
                   ))}
                 </div>
+                {link && (
+                  <div className="mt-6">
+                    <Link to={link} className="text-sm font-semibold" style={{ color: 'var(--teal)' }}>
+                      Learn more about our Life Sciences practice →
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           ))}
