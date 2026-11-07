@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import tgpLogo from '../assets/TGP-logo.webp'
+import CtaLink from './CtaLink'
 
 function Footer() {
   return (
@@ -9,7 +10,7 @@ function Footer() {
         <div className="md:col-span-1">
           <img src={tgpLogo} alt="True Group Partners" className="h-12 w-auto mb-5" />
           <p className="text-sm leading-relaxed" style={{ color: 'var(--gray-600)' }}>
-            Outsourced accounting & CFO services for growing companies — with specialized expertise in life sciences, medtech & government-funded companies.
+            Outsourced accounting & CFO services for growing companies across technology, life sciences, manufacturing, consumer products and more.
           </p>
         </div>
 
@@ -18,13 +19,11 @@ function Footer() {
           <h4 className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: 'var(--teal)' }}>Services</h4>
           <ul className="space-y-2">
             {[
+              ['CFO & Strategic Finance', '/services#cfo'],
+              ['Accounting & Controller Services', '/services#accounting'],
+              ['HR, Payroll & Tax Coordination', '/services#hr'],
+              ['Startup & Transaction Support', '/services#startup'],
               ['Life Sciences & Grant Accounting', '/life-sciences'],
-              ['CFO Advisory', '/services'],
-              ['Accounting Operations', '/services'],
-              ['Financial Modeling', '/services'],
-              ['Tax Services', '/services'],
-              ['HR & Payroll', '/services'],
-              ['Audit Support', '/services'],
             ].map(([s, path]) => (
               <li key={s}>
                 <Link to={path} className="text-sm transition-colors hover:text-teal-600" style={{ color: 'var(--gray-600)' }}>
@@ -61,9 +60,9 @@ function Footer() {
               <a href="mailto:info@truegrouppartners.com" className="hover:underline" style={{ color: 'var(--gray-600)' }}>info@truegrouppartners.com</a>
             </p>
           </address>
-          <Link to="/contact" className="btn-primary mt-6" style={{ fontSize: '0.82rem', padding: '10px 18px' }}>
+          <CtaLink topic="consultation" location="footer" className="btn-primary mt-6" style={{ fontSize: '0.82rem', padding: '10px 18px' }}>
             Book a Call →
-          </Link>
+          </CtaLink>
         </div>
       </div>
 

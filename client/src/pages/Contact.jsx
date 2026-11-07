@@ -1,7 +1,22 @@
 import React from 'react'
+import { useSearchParams } from 'react-router-dom'
 import ContactForm from '../components/ContactForm'
+import { useSeo } from '../helpers/seo'
+
+const FORM_HEADINGS = {
+  'grant-review': 'Request Your Complimentary 20-Minute Grant Accounting Readiness Consultation',
+  sarah: 'Talk With Sarah',
+  'life-sciences': 'Schedule a Life Sciences Consultation',
+}
 
 function Contact() {
+  const [params] = useSearchParams()
+  const topic = params.get('topic') || ''
+  useSeo({
+    title: 'Contact Us | Schedule a Free Consultation',
+    description: 'Schedule a complimentary consultation with True Group Partners about outsourced accounting, controller, CFO, HR and payroll services.',
+    path: '/contact',
+  })
   return (
     <div style={{ background: '#fff' }} className="overflow-x-hidden">
       {/* Hero */}
@@ -60,9 +75,14 @@ function Contact() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3 p-8 rounded-2xl border" style={{ borderColor: '#eef0f5' }}>
-            <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--navy)' }}>Send Us a Message</h3>
-            <ContactForm />
+          <div className="lg:col-span-3 p-6 md:p-8 rounded-2xl border" style={{ borderColor: '#eef0f5' }}>
+            <h3 className="text-xl font-bold mb-6" style={{ color: 'var(--navy)' }}>{FORM_HEADINGS[topic] || 'Send Us a Message'}</h3>
+            {topic === 'grant-review' && (
+              <p className="text-sm -mt-3 mb-6" style={{ color: 'var(--gray-600)' }}>
+                An introductory conversation about your accounting processes and grant reporting requirements — not a formal audit or compliance certification.
+              </p>
+            )}
+            <ContactForm topic={topic} />
           </div>
         </div>
       </section>

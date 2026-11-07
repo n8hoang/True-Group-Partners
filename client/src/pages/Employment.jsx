@@ -1,7 +1,9 @@
+import { useSeo } from '../helpers/seo'
 import React from 'react'
 import EmploymentForm from '../components/EmploymentForm'
 
 function Employment() {
+  useSeo({ title: 'Careers', description: 'Join True Group Partners — career opportunities in accounting, controllership and strategic finance.', path: '/employment' })
   return (
     <div style={{ background: '#fff' }} className="overflow-x-hidden">
       {/* Hero */}

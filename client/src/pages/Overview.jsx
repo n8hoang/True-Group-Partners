@@ -1,4 +1,5 @@
 
+import { useSeo } from '../helpers/seo'
 import sarahImg from '../assets/tgpsarah.jpeg'
 import johnImg from '../assets/john-pp.jpeg'
 import { Link } from 'react-router-dom'
@@ -87,6 +88,7 @@ const benefits = [
 ]
 
 function Overview() {
+  useSeo({ title: 'About Us | Our Team', description: 'Meet the True Group Partners team — CPA, controller and CFO-level finance professionals supporting growing companies from seed to IPO.', path: '/overview' })
   useReveal()
 
   return (

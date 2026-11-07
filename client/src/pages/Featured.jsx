@@ -1,3 +1,4 @@
+import { useSeo } from '../helpers/seo'
 import { Link } from 'react-router-dom'
 import batteryBizImg from '../assets/battery-biz.webp'
 import alleviantImg from '../assets/Alleviant.webp'
@@ -122,6 +123,7 @@ import itgImg from '../assets/Pilot ITG for pilotit com.avif'
 
 
 function Featured() {
+  useSeo({ title: 'Our Clients', description: 'Companies across technology, life sciences, manufacturing, consumer products and more that work with True Group Partners.', path: '/featured' })
   const featuredClients = [
     {
       name: 'Alleviant',

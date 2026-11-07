@@ -1,4 +1,5 @@
 
+import { useSeo } from '../helpers/seo'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
@@ -136,6 +137,7 @@ const serviceSections = [
 ]
 
 function Services() {
+  useSeo({ title: 'Accounting, CFO, HR & Payroll Services', description: 'Outsourced accounting, controller, fractional CFO, grant accounting, tax coordination, HR and payroll services for growing companies.', path: '/services' })
   useReveal()
 
   return (

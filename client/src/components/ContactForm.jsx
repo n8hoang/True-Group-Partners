@@ -1,7 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { track } from '../helpers/analytics';
 
-function ContactForm() {
+// Pre-fill used when a visitor arrives from a CTA button (/contact?topic=…)
+export const CONTACT_TOPICS = {
+  'grant-review': {
+    service: 'Grant Accounting Readiness Consultation',
+    message: "I'd like to schedule the complimentary 20-minute Grant Accounting Readiness Consultation. We recently received an NIH, SBIR/STTR, or other government award.",
+  },
+  sarah: {
+    service: 'Life Sciences & Grant Accounting',
+    message: "I'd like to talk with Sarah about our company's accounting and grant-related needs.",
+  },
+  'life-sciences': {
+    service: 'Life Sciences & Grant Accounting',
+    message: '',
+  },
+};
+
+function ContactForm({ topic = '' }) {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -15,6 +32,11 @@ function ContactForm() {
     message: '',
   });
   const [formErrors, setFormErrors] = useState({});
+
+  useEffect(() => {
+    const preset = CONTACT_TOPICS[topic];
+    if (preset) setFormData(prev => ({ ...prev, service: preset.service, message: prev.message || preset.message }));
+  }, [topic]);
 
   const loadingIcon = (
     <div role="status">
@@ -50,8 +72,10 @@ function ContactForm() {
     }
 
     try {
-      const response = await axios.post('/send-message', formData);
-      console.log('Email sent successfully:', response.data);
+      const isConsultation = Boolean(CONTACT_TOPICS[topic]) || topic === 'consultation';
+      await axios.post('/send-message', { ...formData, source: topic || 'contact' });
+      track(isConsultation ? 'consultation_request' : 'contact_form_submit', { topic: topic || 'contact', service: formData.service });
+      track('generate_lead', { lead_type: isConsultation ? 'consultation_request' : 'contact_form' });
       setSuccessMessage('Message sent! We\'ll be in touch within one business day.');
       setIsLoading(false);
       setFormData({ name: '', email: '', phone: '', company: '', service: '', stage: '', message: '' });
@@ -118,13 +142,12 @@ function ContactForm() {
             <label className="form-label">Service Interested In</label>
             <select id="service" name="service" value={formData.service} onChange={handleChange} className="form-input">
               <option value="">Select a service...</option>
-              <option>Life Sciences & Grant Accounting</option>
-              <option>Grant Accounting Readiness Review</option>
               <option>CFO & Strategic Finance</option>
-              <option>Accounting Operations</option>
+              <option>Outsourced Accounting & Controller Services</option>
+              <option>HR, Payroll & Tax Coordination</option>
+              <option>Life Sciences & Grant Accounting</option>
+              <option>Grant Accounting Readiness Consultation</option>
               <option>Startup & Transaction Support</option>
-              <option>Tax Services</option>
-              <option>HR & Payroll</option>
               <option>Multiple Services</option>
             </select>
           </div>

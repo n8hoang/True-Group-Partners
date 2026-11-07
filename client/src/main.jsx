@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
 import Error from './pages/Error.jsx'
 import './index.css'
 import {createBrowserRouter , RouterProvider} from 'react-router-dom'
-import Services from './pages/Services.jsx'
-import Employment from './pages/Employment.jsx'
-import Contact from './pages/Contact.jsx'
-import Featured from './pages/Featured.jsx'
-import Overview from './pages/Overview.jsx'
-import LifeSciences from './pages/LifeSciences.jsx'
+const Services = lazy(() => import('./pages/Services.jsx'))
+const Employment = lazy(() => import('./pages/Employment.jsx'))
+const Contact = lazy(() => import('./pages/Contact.jsx'))
+const Featured = lazy(() => import('./pages/Featured.jsx'))
+const Overview = lazy(() => import('./pages/Overview.jsx'))
+const LifeSciences = lazy(() => import('./pages/LifeSciences.jsx'))
+const VideoPage = lazy(() => import('./pages/VideoPage.jsx'))
 import 'aos/dist/aos.css';
 
 const router = createBrowserRouter([
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     {index: true, element: <Home/>},
     {path: '/services', element: <Services/>},
     {path: '/life-sciences', element: <LifeSciences/>},
+    {path: '/life-sciences/videos/:slug', element: <VideoPage/>},
     {path: '/overview', element: <Overview/>},
     {path: '/employment', element: <Employment/>},
     {path: '/featured', element: <Featured/>},

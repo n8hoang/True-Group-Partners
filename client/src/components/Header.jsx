@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import tgpIcon from '../assets/TGP-logo.webp'
 import { Link, useLocation } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import CtaLink from './CtaLink'
 
 const links = [
   { id: 1, link: '/', name: 'Home' },
@@ -40,9 +41,9 @@ function Header() {
           boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.08)' : 'none',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+        <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-14 md:h-16' : 'h-16 md:h-20'}`}>
           <Link to="/" onClick={() => setNav(false)} className="flex items-center">
-            <img src={tgpIcon} alt="True Group Partners" className="h-12 w-auto" />
+            <img src={tgpIcon} alt="True Group Partners" className={`w-auto transition-all duration-300 ${scrolled ? 'h-8 md:h-10' : 'h-10 md:h-12'}`} />
           </Link>
 
           {/* Desktop Nav */}
@@ -56,13 +57,10 @@ function Header() {
                 {name}
               </Link>
             ))}
-            <Link
-              to="/contact"
-              className="btn-primary ml-4"
-              style={{ padding: '10px 22px', fontSize: '0.85rem' }}
-            >
+            <CtaLink topic="consultation" location="header" className="btn-primary ml-4"
+              style={{ padding: scrolled ? '8px 18px' : '10px 22px', fontSize: '0.85rem' }}>
               Free Consultation
-            </Link>
+            </CtaLink>
           </nav>
 
           {/* Mobile Hamburger */}
@@ -88,13 +86,11 @@ function Header() {
             {name}
           </Link>
         ))}
-        <Link
-          to="/contact"
-          onClick={() => setNav(false)}
-          className="btn-primary mt-4"
-        >
-          Free Consultation
-        </Link>
+        <span onClick={() => setNav(false)}>
+          <CtaLink topic="consultation" location="mobile_menu" className="btn-primary mt-4">
+            Free Consultation
+          </CtaLink>
+        </span>
       </div>
     </>
   )
