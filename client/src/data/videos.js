@@ -17,6 +17,11 @@
 // cta: 'checklist' | 'consultation' | 'sarah' — the call to action shown after it.
 // ─────────────────────────────────────────────────────────────────────────
 
+// Master switch for all video content on the site (Life Sciences featured video,
+// video library, "Watch" button and /life-sciences/videos/* pages).
+// Off until TGP has finished videos — flip to true to bring everything back.
+export const SHOW_VIDEOS = false
+
 export const VIDEO_CATEGORIES = [
   { id: 'grant-accounting', title: 'Grant Accounting & Compliance' },
   { id: 'funding-growth', title: 'Funding & Growth' },
@@ -75,7 +80,7 @@ export const libraryVideos = [
 
 export const allVideos = [featuredVideo, ...libraryVideos]
 
-export const isPublished = v => Boolean(v && v.embedUrl)
+export const isPublished = v => Boolean(SHOW_VIDEOS && v && v.embedUrl)
 
 export const videoPath = v => `/life-sciences/videos/${v.slug}`
 

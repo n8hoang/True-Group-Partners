@@ -9,7 +9,7 @@ import { useSeo, organizationJsonLd } from '../helpers/seo'
 import { videoJsonLd } from '../helpers/video'
 import { track } from '../helpers/analytics'
 import { SITE_URL } from '../helpers/siteConfig'
-import { featuredVideo, libraryVideos, isPublished, videoPath } from '../data/videos'
+import { featuredVideo, libraryVideos, isPublished, videoPath, SHOW_VIDEOS } from '../data/videos'
 import CtaLink from '../components/CtaLink'
 import VideoPlayer from '../components/VideoPlayer'
 import Transcript from '../components/Transcript'
@@ -119,9 +119,16 @@ function LifeSciences() {
               <CtaLink topic="life-sciences" location="ls_hero" className="btn-primary">
                 Schedule a Consultation <TbArrowRight />
               </CtaLink>
-              <a href="#video" className="btn-outline">
-                <TbPlayerPlayFilled /> Watch: NIH/SBIR Grant — Now What?
-              </a>
+              {SHOW_VIDEOS ? (
+                <a href="#video" className="btn-outline">
+                  <TbPlayerPlayFilled /> Watch: NIH/SBIR Grant — Now What?
+                </a>
+              ) : (
+                <a href="#checklist" className="btn-outline"
+                  onClick={() => track('checklist_cta_click', { location: 'ls_hero' })}>
+                  <TbDownload /> Get the Free Checklist
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -255,17 +262,21 @@ function LifeSciences() {
       </section>
 
       {/* ── FEATURED VIDEO ──────────────────────────── */}
-      <section id="video" className="section-pad" style={{ background: '#fff' }}>
+      <section id={SHOW_VIDEOS ? 'video' : 'after-the-award'} className="section-pad" style={{ background: '#fff' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8 md:mb-12" data-reveal>
             <span className="text-xs font-semibold uppercase tracking-widest mb-3 block" style={{ color: 'var(--teal)' }}>
-              Featured Video
+              {SHOW_VIDEOS ? 'Featured Video' : 'After the Award'}
             </span>
             <h2 className="section-title mb-4" style={{ color: 'var(--navy)' }}>{featuredVideo.title}</h2>
-            <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--gray-600)' }}>{featuredVideo.description}</p>
+            <p className="text-base md:text-lg max-w-2xl mx-auto" style={{ color: 'var(--gray-600)' }}>
+              {SHOW_VIDEOS
+                ? featuredVideo.description
+                : 'Five accounting areas every early-stage life sciences company should address right after receiving an NIH or SBIR/STTR award.'}
+            </p>
           </div>
 
-          <div className="max-w-4xl mx-auto" data-reveal>
+          {SHOW_VIDEOS && <div className="max-w-4xl mx-auto" data-reveal>
             <VideoPlayer video={featuredVideo} size="large" />
             <Transcript text={featuredVideo.transcript} />
             {featuredLive && (
@@ -273,12 +284,14 @@ function LifeSciences() {
                 <Link to={videoPath(featuredVideo)} className="font-semibold" style={{ color: 'var(--teal)' }}>Open video page →</Link>
               </p>
             )}
-          </div>
+          </div>}
 
-          <div className="max-w-5xl mx-auto mt-10 md:mt-12" data-reveal>
-            <p className="text-sm font-semibold uppercase tracking-widest mb-5 text-center" style={{ color: 'var(--navy)' }}>
-              Five areas to look at right after an award
-            </p>
+          <div className={`max-w-5xl mx-auto ${SHOW_VIDEOS ? 'mt-10 md:mt-12' : ''}`} data-reveal>
+            {SHOW_VIDEOS && (
+              <p className="text-sm font-semibold uppercase tracking-widest mb-5 text-center" style={{ color: 'var(--navy)' }}>
+                Five areas to look at right after an award
+              </p>
+            )}
             <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               {featuredVideo.topics.map(({ title, desc }, i) => (
                 <li key={title} className="flex gap-4 p-4 rounded-xl border" style={{ borderColor: '#eef0f5' }}>
@@ -294,11 +307,11 @@ function LifeSciences() {
           </div>
 
           <div className="max-w-4xl mx-auto mt-8 md:mt-10" data-reveal>
-            <VideoCta kind="checklist" location="ls_featured_video" />
+            <VideoCta kind="checklist" location={SHOW_VIDEOS ? 'ls_featured_video' : 'ls_after_award'} />
           </div>
 
           {/* Video library */}
-          <div className="mt-14 md:mt-20">
+          {SHOW_VIDEOS && <div className="mt-14 md:mt-20">
             <div className="mb-6 md:mb-8" data-reveal>
               <span className="text-xs font-semibold uppercase tracking-widest mb-2 block" style={{ color: 'var(--teal)' }}>
                 Video Library
@@ -306,7 +319,7 @@ function LifeSciences() {
               <h2 className="text-2xl font-bold" style={{ color: 'var(--navy)' }}>More From the Series</h2>
             </div>
             <VideoLibrary />
-          </div>
+          </div>}
         </div>
       </section>
 

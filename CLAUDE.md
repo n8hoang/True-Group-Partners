@@ -31,6 +31,7 @@ optional `VITE_GA_ID` (GA4).
 ## Where content lives
 - Homepage: `client/src/pages/Home.jsx` (services, stats, testimonials, industries arrays at the top).
 - Life Sciences: `client/src/pages/LifeSciences.jsx` (Sarah bio, 6 service cards).
+- Videos are currently hidden site-wide (`SHOW_VIDEOS = false` in `client/src/data/videos.js`) per John, Nov 2026 — flip to true once videos exist.
 - Video library: `client/src/data/videos.js` — publish a video by setting `embedUrl`, `uploadDate`, `duration`,
   `description`, `transcript`. Published videos get `/life-sciences/videos/<slug>`, VideoObject schema, sitemap entry.
   Unpublished: placeholders on staging, compact "Coming Soon" list on live.
@@ -50,3 +51,4 @@ optional `VITE_GA_ID` (GA4).
 - [ ] Privacy policy page (checklist form references data use)
 - [ ] GA4 property ID; canonical domain (www or not)
 - [ ] Video scripts from Sarah → produce videos
+- [ ] Confirm "Diamond Elyte" is the right display name (site is branded EliteLyfe)

@@ -1,5 +1,11 @@
 import { useSeo } from '../helpers/seo'
 import { Link } from 'react-router-dom'
+import greenwasteImg from '../assets/client-greenwaste.svg'
+import clearsultingImg from '../assets/client-clearsulting.svg'
+import leveeMedicalImg from '../assets/client-levee-medical.svg'
+import tahoeEquityImg from '../assets/client-tahoe-equity.svg'
+import mistyImg from '../assets/client-misty.svg'
+import diamondElyteImg from '../assets/client-diamond-elyte.svg'
 import batteryBizImg from '../assets/battery-biz.webp'
 import alleviantImg from '../assets/Alleviant.webp'
 import anyMeetingImg from '../assets/Anymeeting-Logo.webp'
@@ -636,6 +642,12 @@ function Featured() {
     { name: 'Blueprint 52', link: '', img: blueprint52Img, dark: false },
     { name: 'PokerGFX', link: '', img: pokerGfxImg, dark: false },
     { name: 'Resida', link: '', img: resiadaImg, dark: false },
+    { name: 'GreenWaste', link: 'https://www.greenwaste.com', img: greenwasteImg },
+    { name: 'Clearsulting', link: 'https://www.clearsulting.com', img: clearsultingImg },
+    { name: 'Tahoe Equity', link: 'https://tahoeequity.com/', img: tahoeEquityImg },
+    { name: 'Get Misty', link: 'https://getmisty.ai/', img: mistyImg },
+    { name: 'Diamond Elyte', link: 'https://www.elitelyfe.com/', img: diamondElyteImg },
+    { name: 'Levee Medical', link: 'https://leveemedical.com', img: leveeMedicalImg },
   ]
   const sortedClients = [...featuredClients].sort((a, b) =>
     a.name.toLowerCase().localeCompare(b.name.toLowerCase())

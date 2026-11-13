@@ -4,7 +4,7 @@ import useReveal from '../helpers/useReveal'
 import { useSeo } from '../helpers/seo'
 import { videoJsonLd, thumbnailFor } from '../helpers/video'
 import { IS_STAGING } from '../helpers/siteConfig'
-import { allVideos, isPublished, categoryTitle, videoPath } from '../data/videos'
+import { allVideos, isPublished, categoryTitle, videoPath, SHOW_VIDEOS } from '../data/videos'
 import VideoPlayer from '../components/VideoPlayer'
 import Transcript from '../components/Transcript'
 import VideoCta from '../components/VideoCta'
@@ -13,7 +13,7 @@ import VideoCta from '../components/VideoCta'
 function VideoPage() {
   const { slug } = useParams()
   const video = allVideos.find(v => v.slug === slug)
-  const viewable = video && (isPublished(video) || IS_STAGING)
+  const viewable = SHOW_VIDEOS && video && (isPublished(video) || IS_STAGING)
   useReveal([slug])
 
   useSeo({
@@ -25,7 +25,7 @@ function VideoPage() {
     type: 'video.other',
   })
 
-  if (!viewable) return <Navigate to="/life-sciences#video" replace />
+  if (!viewable) return <Navigate to="/life-sciences" replace />
 
   const related = allVideos.filter(v => v.slug !== video.slug && v.category === video.category && isPublished(v)).slice(0, 3)
 
